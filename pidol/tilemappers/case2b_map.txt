@@ -1,0 +1,23 @@
+#******************************************************************************
+# case2b map tilemap generator
+#******************************************************************************
+
+[Properties]
+palette=out/rsrc_raw/pal/case2b_map_mod.pal
+#freepalettes=
+dest=out/grp/case2b_map_0.bin
+#paldest=out/rsrc_raw/pal/carderror.pal
+loadAddr=0x180
+#minTiles=0x185
+maxTiles=0x500
+#blacklist=360-363
+
+#******************************************************************************
+# Main layout
+#******************************************************************************
+
+[Tilemap00]
+source=rsrc/grp/case2b_map_0-0.png
+dest=out/maps/case2b_map_0-0.bin
+transparency=0
+

@@ -1,0 +1,1294 @@
+
+2D4F
+3A60
+
+3AF9 = buffer for generated font character pattern data?
+
+== memory ==
+  2010-2011 = gamescr: current script pointer?
+  2020+ = params for routine calls?
+  2064 = vsync flag?
+         set to 1 after vsync?
+  20F3-20F4 = vdp control register
+  26FF = nonzero when button 1 is held as game is started,
+         enabling case select + bonus features cheatr
+  2760: case 3 name screen: ID of selected character
+  2761: case 3 name screen: current number of characters typed
+  2973-2975 = src sector for current "area" script data, in H/L/M format?
+              loaded e.g. after opening cutscene
+              probably used so the game knows which area to reload to
+              after an out-of-engine cutscene
+              e.g. 00 D6 02 -> sector 0x2D6 -> 0x16B000
+              dst = bank $70
+              - actual script data begins in bank $72?
+                this seems to be the base when converting offsets
+                into pointers
+              fixed size of 0x20 sectors = 8 pages
+              loader at $29CC
+              - also loads sector 0xD6  = "kernel", to $68? 0x18 sectors?
+              this is apparently set directly from some kind of script.
+              values are not simply ascending:
+              case 1 = 2D6 -> 2F6
+              case 2a = 130E -> ?
+              case 2b = 1EBE -> ?
+              case 3 = 31C2 -> ?
+              art gallery = 356 -> ?
+              karaoke song select menu = 0x1F9E
+  297D = current case id?
+         0 = case 1
+         1 = case 2a
+         2 = case 2b
+         3 = case 3
+         4 = bonus features menu
+  29CA = acCardAbsent?
+         resources normally cached to the ac card are not loaded from it
+         if nonzero.
+         note that the game appears to sometimes temporarily override this
+         setting to force certain things to be loaded from cd for some reason?
+         see $96E9 in kernel, gamescript op 5A
+  29CB = advModeOn?
+         flag that is zero if on the overworld, nonzero if in an adv segment?
+         determines base bank for textscript data?
+         zero = 0xA (i.e. 0x72, the main area script data block?)
+         nonzero = 0x10 (i.e. 0x78, outside the area data? how is this loaded?)
+  2ACD-2ACE = SAT vram address
+  2ACF = local copy of SAT
+  2D4F = buffer with raw 1bpp data for right part of previously printed character?
+  30D0 = buttonsPressed?
+         (at least when checking cheats on title screen)
+  3174 = buttonsPressed?
+  3179 = buttonsTriggered?
+  3192 = cutscenes: scene frame timer
+         - current mainline mednafen's inaccurate cd seek timing causes problems
+           which result in the game hanging during certain cutscenes due to
+           an unchecked underflow overflow when the game is calculating the
+           time it needs to delay before triggering the next event.
+           as a workaround, manually poking this to a lower value
+           (by 16 or so) just before such a freeze occurs will prevent it,
+           though it will result in audio desync.
+  3194 = gamescr: byte array indicating active slots?
+         - bit 7 set = script not running?
+  31BB = array of gamescr raw index -> target slot assignments?
+         e.g. 5 = dialogue box? (assigned to slot at $336C)
+  3343 = y-index of selected option on e.g. save menu
+  3344 = x-index of selected option on e.g. save menu
+  3345 = raw index of selected option on e.g. save menu
+  395E = palette fade trigger
+         - this is more complicated than just "nonzero = on",
+           but i haven't looked into the mechanics.
+           in any case, set to 1 for normal behavior.
+  395F = palette fade steps remaining
+         - negative for black fade, positive for white fade
+  3963 = palette fade speed for sprite palettes (frames between update)
+  3967 = palette fade speed for bg palettes
+  396B-396E = bitfield indicating target palettes for fade effects
+              - 396E & 0x80 = message window sprite background
+  397D = 0x28-byte buffer for preparing new rcr state structs
+  3A67 = current string/script srcptr?
+  3A75-3A76 = base BAT position when using text box?
+  3A84 = currentScriptBaseBank?
+  3AC5 = when entering names on menu in case 3, stores current name
+         (6? bytes, blank spaces FF)
+  3AE5 = ? frequently referenced as an array index relating to scripts,
+         but the actual use is unclear.
+         it almost seems like the engine is intended to be able to print to
+         multiple locations at once, maintaining a separate state for each,
+         but doesn't -- the arrays referenced in this way (e.g. $3A7C)
+         seem to only be one byte long...
+  3AF7 = ??? something to do with printing
+         game spends a great deal of time adjusting this value,
+         but commenting out the one time it's actually used in a calculation
+         (at $5D27) has no obvious effect...
+         and seems to be in an inaccessible branch of the code anyways??
+  3B79 = scriptContinueFlag?
+         if nonzero after current script op is handled, and the current op
+         is not 04 (wait for button press), then the game immediately continues
+         the script without breaking the interpreter loop
+  3B85 = scriptActive?
+         - bit 7 set (0x80) if script running?
+         - if bit 6 set (0x40), script needs to be ended?
+         
+  ** standard gameplay **
+  753F = array of 2 4-byte structs corresponding to game threads?
+         see main loop at $4198
+         normally, there seems to be one thread running for the main
+         gamescript logic in the kernel, and another one that runs
+         the code at the beginning of the current area's data
+         - 1b flags
+           - if top bit set, thread's handler is called
+         - 1b bank offset of handler (add 0x68 to get target)
+         - 2b handler jump address (after loading source banks to MPR4/5)
+  
+  ** gamescript mem **
+  9FFB = currentSpriteCount?
+         used when generating SAT to 2ACF
+  9FFC = previousSpriteCount?
+         set to currentSpriteCount at end of sprite generator routine
+         used to decide whether any entries need to be blanked out at
+         end of table on the next frame
+
+== memory layout: normal gameplay ==
+  pages 0x68-0x6F: kernel code + data
+    - pages 0x68-0x69: core functionality, always paged into MPR2/3?
+    - page 0x6A: supplemental code, mostly for gamescript?
+                 paged into MPR4 when needed?
+    - pages 0x6B-0x6C: ?
+      - the area at physical memory 0xD7D34-0xD97FF is 0xFF-filled
+        and seems to not be used?
+        (0x1ACC bytes)
+      - physical memory 0xD9800+ contains code for reimplemented
+        CD read routines?
+        - last bit of bank, at 0xD9E34-0xD9FFF, isn't used
+          (0x1CC bytes)
+    - page 0x6D: storage for copy of generated 4bpp output character data,
+                 used for compositing text when adding new characters
+                 (and also as storage in preparation for insta-printing)
+    - pages 0x6E-0x6F: ?
+  pages 0x70-0x77: overworld code+data?
+    - pages 0x70-0x71: raw code and associated data?
+    - pages 0x72-0x77: script data
+  pages 0x78-???: supplemental data area
+    - this has varying uses:
+      - during normal gameplay, it contains uncompressed character sprites,
+        uncompressed tile graphics for maps,
+        and most likely some other less obvious stuff (tilemaps)?
+        not sure if there's any use of compressed graphics;
+        everything i've seen so far comes from either the ac card
+        or the disc uncompressed
+        - the end of this area seems to be reserved as a decompression
+          buffer for dynamically loaded graphics
+      - during adv segments and in-engine cutscenes, it's loaded with additional
+        gamescript and text data (always located at the start? first bank only?),
+        as well as graphics for the associated scenes
+    - page 0x78, at least, seems to have script data at start of game
+    - the full 0x10-page area seems to get loaded,
+      but at least the end of it is used for character portraits and stuff
+
+== area data ==
+  - 0x20 sectors/8 banks each, loaded to memory pages 0x70-0x77
+  - first 2 banks contain code, remainder is script data?
+    banks 0/1 seem to be independent, with each running out of the
+    $8000 page
+    - starting at 0x3000 (second half of bank 1), there is some sort of index
+      used for e.g. loading external resources --
+      see loadFromAcCardOrCd ($9C9A) in the kernel
+      - 0x3100 = 3 16-bit slot 5 pointers for ??? loading?
+      - 0x3106+ = table of 16-bit gamescript offsets (relative to 0x4000+ area)
+        - e.g. entry 0 is script offset for run menu
+
+== gameobj format ==
+  +0x06-07 = frame delay timer; object will not be processed until zero
+  +0x08-09 = objBaseTime?
+             when setting the delay timer via op 31, this is added to
+             raw values from the script, with the global scene timer
+             subtracted the result to get the target delay time
+
+== out-of-engine cutscenes ==
+  scene list: (set breakpoint on $29EB)
+    - 0x544E, 0x80 sectors: nec splash screen + intro
+    case 1:
+    - 0x4A4E, 0x80 sectors: opening part 1
+      - 0x4ACE, 0x80 sectors: oruka commercial
+      - 0x4B4E, 0x80 sectors: opening part 2
+    - 0x4BCE, 0x80 sectors: ayaka death p1
+      - 0x4C4E, 0x80 sectors: ayaka death p2
+    - 0x4CCE, 0x80 sectors: ending p1
+      - 0x4D4E, 0x80 sectors: ending p2
+    - 0x4DCE, 0x80 sectors: dart discovery
+    case 2a:
+    - 0x4E4E, 0x80 sectors: opening p1
+      - 0x4ECE, 0x80 sectors: opening p2
+      - 0x4F4E, 0x80 sectors: opening p3
+    - 0x4FCE, 0x80 sectors: ending
+    case 2b:
+    - 0x504E, 0x80 sectors: putting on navi
+    - 0x50CE, 0x80 sectors: ending
+    case 3:
+    - 0x514E, 0x80 sectors: opening p1
+    `- 0x51CE, 0x80 sectors: opening p2
+    - 0x524E, 0x80 sectors: sakaki capture
+    - 0x52CE, 0x80 sectors: ending p1
+      - 0x534E, 0x80 sectors: ending p2
+      - 0x53CE, 0x80 sectors: ending p3
+    - 0x54CE, 0x80 sectors: credits
+    extras:
+    - 0x554E, 0x80 sectors: voice actress interviews
+    - 0x55CE, 0x80 sectors: voice actor interviews
+  
+  so: 0x18 scenes, 0x80 sectors each, starting at sector 0x4A4E on disc
+  bank 0 is identical for most scenes.
+  exceptions:
+    - 0x54CE = credits, which have a different structure from anything else
+    - 0x4E4E = case 2a opening p1: base/scene/scene-0x4A4E.bin base/scene/scene-0x4E4E.bin differ: byte 3435, line 70
+    - 0x4FCE = case 2a ending: base/scene/scene-0x4A4E.bin base/scene/scene-0x4FCE.bin differ: byte 3435, line 70
+    - 0x554E = voice actress interviews: base/scene/scene-0x4A4E.bin base/scene/scene-0x554E.bin differ: byte 3435, line 70
+    - 0x55CE = voice actor interviews: base/scene/scene-0x4A4E.bin base/scene/scene-0x55CE.bin differ: byte 3435, line 70
+  for everything except the credits, the sole difference seems to be 3 bytes
+  at 0xD6A (0x4D6A in memory).
+  in most scenes, it's 20 00 E0 = jsr $E000, to reset to the bios.
+  however, in this handful of scenes, it's instead 6C FE FF = jmp $FFFE,
+  a jump to the reset vector, which should achieve the same effect.
+  how they managed to do this, i don't know.
+  in any case, the practical upshot of this is that the changes to bank 0
+  can apply to all files without the need for auto-generating positioning
+  headers or whatever.
+  there seem to be ~0x3E8 bytes of free space available at the end of bank 0.
+  
+  all scenes (except credits with their different layout) have a reasonably
+  substantial block of free space at the end of bank 2 (up to 0x6000) --
+  the smallest, in scene-0x4FCE, appears to be ~0x18CE bytes long,
+  which should be enough space for the needed additional resources.
+  if not, there is additional space at the end of the following bank
+  (up to 0x8000).
+  (note: the voice actress/actor interviews possibly don't have this space,
+  but i have no intention of translating them anyway)
+
+== out-of-engine scenes ==
+  - rcr interrupts are handled via 5 8-byte structs
+    located at $75+, transferred there from prep area at $397D
+    in vblank handler.
+    the first of these is actually a unique setup struct,
+    while the remaining four at $7D+ have the following format:
+    - +0-1 = target line num, including 0x40-byte offset.
+             top bit of high byte must be set, or entry is ignored
+             and treated as end of list?
+    - +2 = OR with 0x0C and send to control register on trigger?
+    - +3-4 = target bg y-scroll
+             (high byte set to zero in code)
+    - +5-6 = target bg x-scroll
+    - +7 = no scroll override flag?
+           if zero, when this RCR triggers:
+           - y-scroll lo is overriden with ((rawTargetRCR - 0x40) + $62)
+           - x-scroll is overriden with $60-61
+  - the setup struct at $75 has the following format:
+    - +0 ($75) = enabled flag -- must be nonzero for rcr to occur
+    - +1 ($76) = target RCR subhandler routine index
+                 this should always be zero, as there is only one subhandler
+    - +2 ($77) = rcrState
+                 if +0 is nonzero, this is set to $80 at vblank,
+                 and a line interrupt is scheduled for the first frame
+                 of the display.
+                 when it occurs, the RCR handler specially checks for
+                 this state, and initially sets BG and sprites to off
+                 before scheduling the next interrupt for whatever line it
+                 should occur on.
+                 (if $0050 is nonzero, it also does something with
+                 the palettes? 0x100-byte transfer from $3074 to cram $180?)
+                 it's then set to zero, and incremented with each successive
+                 line interrupt to track target array entry.
+    - +3 and onward aren't used?
+  - note that the kernel uses similar processing but with a slightly
+    different implementation and some differences, e.g. no palette stuff.
+    the structs also begin at $77 instead of $75
+
+- bank 6D = storage for generated 4bpp output character data
+
+5E7F
+
+99C3
+
+text is (sigh) a custom encoding that maps codepoints directly to the
+BIOS font, or to a small supplemental set of characters.
+this seems to have been done as part of a text compression scheme
+(certain ranges of 8-bit values that are not directly mapped to the upper byte
+of a 16-bit codepoint are remapped in code to other values).
+in any event, the bios font follows SJIS order where it isn't missing characters,
+and the game encoding thus ends up at least resembling it.
+in some cases, unmapped characters are even included in the game's encoding,
+with these filtered out in the font lookup code.
+- high byte = region number
+  - if 0x76, this is a supplemental character not found in the main font
+    7621 = [heart]
+    7622 = [!!]
+    7623 = [?!]
+    7624 = [I] (for "button I")
+    7625 = [II] (for "button II")
+  - otherwise, subtract 0x21 to get lookup index --
+    BUT if raw value >= 0x28, subtract 8 first
+    - this means that 0x28-0x2F are "mirrors" of 0x20-0x27, but the game will
+      NOT handle both ranges identically -- the special remap checks based on
+      the high/low byte do not occur for the "mirror" range (which surely
+      wouldn't actually be useful for anything?)
+      - and indeed, the compression remaps anything with an upper
+        byte of 0x26 through 0x2F...
+  - compression:
+    ; - 0x26-0x2F -> 0x2330 = digits
+    ; - 0x50-0xA2 -> 0x2421 = hiragana
+    ; - 0xA3-0xF8 -> 0x2521 = katakana
+    ; - 0xF9-0xFA -> 0x2122 = "、"/"。"
+    ; - 0xFB-0xFC -> 0x2129 = "？"/"！"
+    ; - 0xFD -> 0x2145 = "‥"
+    ; - 0xFE -> 0x214A = "（"
+    ; - 0xFF -> 0x2156 = "「"
+- low byte = subcode
+  - subtract 0x21 to get raw index --
+    BUT special hardcoded rules apply to selected ranges depending on the high byte
+
+looks like there are actually two types of cutscenes:
+some that run off of the regular in-game object engine,
+and others that load in their own player(?).
+for instance, the opening cutscene when starting a new game uses
+the dedicated player, while events during the first case like
+the sword statue and motoko cutscene are in-game.
+perhaps the visibility of the dialogue box is a giveaway?
+anyway, the dedicated cutscenes seem to each have their own executable.
+check gamescr op 67.
+
+00 4a 4e
+80
+first cutscene?
+
+00 02 d6
+20
+gameplay start?
+
+9734
+
+unreferenced lines in case1_2D6?
+
+- a scenario where may barges into motoko's room to tell her kanna is waiting
+  downstairs. similar to some referenced dialogue, except in that version,
+  may is asking why motoko isn't with kanna.
+[adpcm]<$00><$8F><$66><$11><$00><$E0><$80><$00>素子「ちょっと！\nノックもなしに、人の部屋に入
+// $7d80
+ってこないで！[wait][clear][adpcm]<$00><$A0><$66><$0E><$00><$40><$69><$00>メイ「あ、ごめん。\nかんなが下で待ってたよ。[wait][op12][end1A][end16][adpcm]<$00><$AE><$66><$13><$00><$E0><$91><$00>素子「わか
+// $7dc0
+ってるわよ。\n私は忘れ物を取りに来ただけなの！[wait][clear][adpcm]<$00><$BF><$5E><$13><$00><$00><$97><$00>素子「ったく、がさつなんだから。早く出てい
+// $7e00
+きなさいよっ！[wait][op12][end1A][end16]
+
+- text version of the cutscene that occurs when examining the statue
+[adpcm]<$00><$48><$5B><$06><$00><$00><$2B><$00>ナビ「あぶなぁい!!\n[wait][op12][end1A][end16]メイ「‥‥‥‥‥‥‥‥‥‥‥‥‥し、死ぬかと思った‥。[wait][clear][adpcm]<$00><$4E><$5B><$14><$00><$48><$9E><$00>綾華「
+// $7640
+メ、メイちゃん‥‥‥‥よ、よかったぁ。[wait][op12][end1A][end16]
+
+
+
+setup code for starting new game? at ~$5650
+setup code for entering karaoke menu at ~$56D7
+  
+the sound test rooms can be accessed (sort of?) by setting a breakpoint
+at $571D on the title screen, starting a new game, and, when the
+breakpoint triggers, setting $FC-FE to "00 32 82" (and $2973-2975 to "00 82 32"?)
+though this puts you in the ocean with only the "all lines" npc;
+not sure if that's supposed to happen or not?
+
+for 4-line text box, it should be possible to just use the insta-print
+flag to decide whether to space lines by 12 pixels or 16.
+though stretch-text mode is a complicating factor, so it might be good to
+have a separate, optional flag to force 3 lines for that case?
+though honestly, it might be best to just say that stretched text is only
+allowed to occur on line 0 or 2 and not worry about the non-pattern-aligned
+case; the original game already forces pattern alignment horizontally for
+stretched text
+- maybe it can be reduced to having an alternate linebreak that sets things
+  up for printing at the same position as the old second row?
+  that should be the only case that really matters
+  - or even just make turning on instaprint automatically jump the print
+    position to the 3-line equivalent of the current 4-line position.
+    then just turn it on and off without printing anything to get
+    the desired effect.
+    or have instaprint specifically affect newlines -- turn it on
+    just for the newline, then off again and print whatever you want.
+    - though do note that insta-printing is used for most messages
+      that appear on signs; is having the 3-line box desirable there?
+      many of them are centered vertically, which works better with 3 lines...
+- offset source 12-px high chars by 4 lines if insta-print off
+  and on odd row
+- will need to be able to keep track of whether we're on "old" or "new" rows.
+  double values used for currentLineNum?
+  - or maybe easier to just set a flag indicating whether the most recent
+    newline was under 4-line or 3-line (insta-print) conditions
+  old -> new
+    0  =  0
+    1  =  2
+    2  =  4
+   ---------
+  12px -> new
+    0  =  0
+    1  =  1
+    2  =  3
+    3  =  5
+
+●アートギャラリー
+Ⅰを押しながら、ゲームを起動させる。そしてメニュー画面で、上、下、左、右、上、下、セレクト、Ⅱの順に押す。すると、画面が切り替わりアートギャラリーになる。ここではゲームに登場するキャラに話しかけることで、ビジュアルを見ることができる。
+
+●シナリオセレクト
+Ⅰを押しながら、ゲームを起動させる。そしてメニュー画面で、上とセレクトを押しながらスタートを選択するとシナリオ2の前編から始まる。同じく、メニュー画面で、下とセレクトを押しながらスタートを選択するとシナリオ2の後編から始まる。メニュー画面で、左とセレクトを押しながらスタートを選択するとシナリオ3から始まる。
+
+
+95F
+113A
+size = 0x7DB
+
+0x227
+in e.g. yuuko shower scene, bios at one point goes into a long loop
+in what seems to be a cd interrupt at ~E95D.
+it persists for several frames and eventually returns, blocking
+everything not interrupt-driven until it does.
+from looking at other games, this seems to be
+the normal behavior when AD_CPLAY is used for streamed ADPCM playback.
+(actually, it seems to be part of the cd loading code in general)
+this finally gives the game's thread the chance to notice that a vsync
+has occurred (actually several of them), and it then does the normal
+end-of-frame processing.
+however, because of the long delay, this occurs at some random point
+in the middle of the frame rather than during the end part of vblank
+as intended.
+which causes a problem because it then calls the control pad update(?) code
+in the middle of the frame, which disables interrupts, which means
+that if any line interrupts need to occur while it's doing the update,
+they'll be disrupted.
+not sure what i can feasibly do about this, given that i can't exactly
+control what the cd interrupts do.
+i suppose i could hack in a check so that if the game has lagged
+(counter at $2064 that's incremented every vsync is greater than 1
+after the vsync wait loop), and the subtitle engine is on, we skip
+the joypad read. but that seems rather heavy-handed.
+
+e905
+
+3621
+
+9157
+E11EE = case 2a menu layout table
+; 1-column menu:
+; left column highlight starts at pattern 0x0
+; right column highlight starts at pattern 0x1C (end of box)
+00 1C 00 00 00 00 00 00
+; 2-column menu:
+; left column highlight starts at pattern 0x0
+; middle column highlight starts at pattern 0xE
+; right column highlight starts at pattern 0x1C (end of box)
+00 0E 1C 00 00 00 00 00
+00 08 11 1C 00 00 00 00
+00 07 0E 15 1C 00 00 00
+00 05 0B 10 17 1C 00 00
+  - E11FE = save menu layout table
+
+270F & 0x02
+
+37516497
+
+d8832
+
+gamescr in area-0x31E2 that handles the password entry for magsax
+appears to begin at 0x681A, and does not seem to be referenced.
+looks like it was disabled by putting in a jump command at the start
+pointing to the "your friends have already left" message?
+re-enable for situations where that message appears by changing
+the script pointer at 0x3172 in the file (physical memory $E3172)
+from 0x2817 to 0x281A.
+yeah, this is definitely unused, there's no voice acting for
+several of the lines.
+entering password as ケモノ gives you a message about getting a "secret notebook".
+however, looking at the script data shows that it's really just showing
+a message and nothing more; no flags are set.
+manually forcing the game to use the alternate menu layout with the ?????
+option, e.g. by changing the 3 bytes at 0x41E7/$E41E7 from 26 04 02
+to some near-nop like 06 01 00 = 1-frame delay, reveals that...
+it does nothing when selected.
+the script this option is linked to is 0x39F, which does nothing but
+run an empty textscript (at 0x5F4B/0x9F4B) and terminate.
+whatever plan they had here, they abandoned it pretty thoroughly.
+
+2d50
+
+0x0000 = 000000 = 0x0038
+0x0049 = 242424 = 0x0079
+0x0092 = 484848 = 0x00BA
+0x00db = 6D6D6D = 0x00FB
+0x0124 = 919191 = 0x013C
+0x016d = B6B6B6 = 0x017D
+0x01b6 = DADADA = 0x01BE
+0x0000 = 
+0x0000 = 
+0x0000 = 
+0x0000 = 
+0x0000 = 
+0x0000 = 
+0x01ff = FFFFFF = 
+0x0000 = 
+0x01ff = FFFFFF = 
+
+0x0000 = 000000 = 0x0000
+0x0049 = 242424 = 0x0008
+0x0092 = 484848 = 0x0010
+0x00db = 6D6D6D = 0x0018
+0x0124 = 919191 = 0x0020
+0x016d = B6B6B6 = 0x0028
+0x01b6 = DADADA = 0x0030
+0x0000 = 
+0x0000 = 
+0x0000 = 
+0x0000 = 
+0x0000 = 
+0x0000 = 
+0x01ff = FFFFFF = 0x0038
+0x0000 = 
+0x01ff = FFFFFF = 
+
+362C
+
+obj+0x14 = flags -- top bit = visibility
+obj+0x15 = substate 
+obj+0x16 = base bank for e.g. state data offsets
+obj+0x17-18 = offset of state structure offset table
+obj+0x19-1A = base sprite num *2
+
+titleobj+0x06 = state table pointer?
+titleobj+0x08 = substate
+titleobj+0x09 = flags lo (= palette)?
+titleobj+0x0A = flags hi?
+
+for title sprite defs:
+  +0 = y
+  +1 = x
+  +2 = tile num (offset from obj base)
+  +3 = palette (offset from obj base)
+  +4 = flags high byte? for size, flipping, etc.
+
+6680 = op 07
+
+splash3 = base tile 0x80, 0x104 tiles
+splash4 = base tile 0x80, 0xE7 tiles
+splash5 = base tile 0x80, 0x89 tiles
+
+end-of-module free space starts at 0x34600 and goes to 0x37FFF;
+0x38000-0x3FFFF is used as a buffer for decompressed graphics
+
+A1
+7A1F
+7A12
+7A0E
+4267
+
+E638D
+
+E1A8B
+
+2F14
+3154
+
+FIXME: the following sentence causes some cache misdetection that results in the end of the line getting overwritten, and i don't care enough to try to fix it this late in development:
+
+It seems the culprit isn't Motoko. You see.......................................\n
+...............................................................
+
+~~ the private eye[optional space]dol secret stuff list ~~
+
+  ---------
+  - CODES -
+  ---------
+
+  - Green Room: At the title menu, while holding Select and Right, choose the "Start" option. Contrary to what most cheat sites claim, you don't need to hold Button I while booting the game for this to work. A menu will appear allowing you to listen to extensive voice actor commentary (not translated, sorry) and view a karaoke sequence of the theme song with or without vocals.
+  
+  - Art Gallery: Hold Button I while booting the game until the title menu appears (the intro will not appear at all if this is done correctly). Then press Up, Down, Left, Right, Up, Down, Button II, Run. This will take you to a special playable bonus area. In addition to the advertised cutscene viewer and music player, it also has a hidden "sidequest" of sorts -- check out the gap on the right side of Yoh's room, at the very back of the area. Note that once you've started this "quest", you can get hints for it by pressing Button II.
+  
+  - Scenario Select: As with the Art Gallery, hold Button I as the game boots until the title menu appears. Now, like with the Green Room, hold Select and a direction on the D-Pad while selecting the "Start" option to begin the game from a particular scenario:
+    - Select + Up: Scenario 2, Part I
+    - Select + Down: Scenario 2, Part II
+    - Select + Left: Scenario 3
+
+  --------------------
+  - EASTER EGG STUFF -
+  --------------------
+
+  == Scenario 1 ==
+
+  - After questioning Motoko when Kanna goes missing, leaving Motoko's room and walking down the hall will cause Navi to remark about Ayaka not being back yet. At this point, you can go back to Motoko and ask her to tell Ayaka to wait in her room if she comes back. If you do, when Motoko gets up and leaves her room after a while (this is based on a real-time timer), she'll put a note on the door to May's room. None of this ultimately has any bearing on the plot, but it's easy to miss since the game never mentions it and you're locked out of doing it after a few minutes.
+
+  - Immediately after the case review following Ayaka's death, when regular gameplay resumes in May's room, Yuuko will be taking a shower downstairs. Predictably, you're given the option to peep on her, with a unique cutscene for doing so. This is easy to overlook (probably on purpose), since taking the more logical action of talking to Motoko makes it no longer possible.
+  
+  - After finding the sleeping pill in the torture chamber, leave and go to May's room without investigating anything else. Yuuko will be standing next to Ayaka, and will leave and return to her own room as you approach. This is never actually explained, so come up with your own speculation.
+  
+  - During the climax, there are some less-than-obvious options available:
+    - You can't lose on the first move, and there's different dialogue for every possible action (moving in any of the four directions or doing nothing).
+    - Several routes result in extra dialogue:
+      - Down, Down, Right (pinned in the corner, game over)
+      - Down, Right, Left (successful escape; most people would never try this because it involves moving straight toward Yuuko, which is a game over in almost every other situation)
+      - Down, Left, Up (game over)
+  
+  == Scenario 2, Part I ==
+
+  - Talking to the person you've set as the culprit normally yields unique dialogue; you can usually do it twice for different lines.
+  
+  - When searching for the ring, set the navigator as the culprit and examine the anchor chain at the bow.
+  
+  == Scenario 2, Part II ==
+
+  - Once you unlock the "Beach" location, place it on one of the shore tiles on the west side of the map instead of its actual location, then try to go there to get a bonus scene. You can't do this once you've put it in the correct position, or once Motoko has left.
+  
+  - After investigating the crime scene at the Noctilucent Cave, when you're supposed to talk to Watabe and Sakaki in the hotel lobby, ignore them and go to the third floor for a small gag involving Kihara.
+  
+  - The morning after proving Motoko's innocence, immediately leave the hotel and go to the Noctilucent Cave to find the old woman standing outside.
+  
+  - After the old woman screams at Watabe at the substation, she can be found at the harbor.
+  
+  == Scenario 3 ==
+
+    - When ordering at Sun Dance, the game accepts a number of unlisted passwords. It's not terribly exciting, though; they have no effect beyond the owner going through the same "fetching an order" animation as for any other valid entry that isn't the "real" password. Nonetheless, here they are:
+        - カフェオレ (CAFE AU LAIT)
+        - ココア (COCOA)
+        - メロンソーダ (MELON SODA)
+        - コーラ (COLA)
+        - メイスター (MAY STAR)
+
+    - After Beast gets shot, return to District 2 and, disregarding Navi's warnings, attempt to reenter Sun Dance to get a unique game over.
+
+    - At the end of the credits is a copyright message. Waiting for several minutes on this screen will cause a series of messages to appear, eventually resulting in the game giving you the code to access the "Green Room" described above.
+      
+
+
+
+沢田：な、何だ！？何があった？
+メイ：素子、どうしたの？
+素子：うっ…ゆ、幽霊が…
+メイ：え？
+素子：ゆ…幽霊が出て…
+　か、かんなを…かんなを…[さ?]…！
+
+綾華：これがナビ？
+　かわいい！
+ナビ：あ！はじじめまして！
+メイ：まだ上手に喋れないんだけどね
+　これでも、ずいぶん上達したんだよ
+ナビ：ナビの話、まだだ変ですか？
+笹木：ホログラム投影[装置つき?]の人工知性体ですか？
+　最近ＣＭをよく見ますけど、大したものですね
+　こんなに表情が[豊かだ?]なんて、思いませんでしたよ
+綾華：ホログラムって？
+優子：立体映像の事よ
+綾華：あ、優子さん！
+優子：つまり、その人形さんは空中に表示されている映像ってわけ
+綾華：へえぇ、優子さんって物知り
+沢田：おお！[話題?]の２人さんのＣＭだぜ！
+
+メイ：コンピュータが、進化する！
+ナビ：はじめまして！あたしがオルカ！
+　炊事も掃除もできないけれど、あなたの小さな友達です！
+メイ：コンピュータが、進化した！
+　人とコンピュータは、一つになれる
+　マルチメディアインタフェース、オルカ
+メイ＆ナビ：お・る・か？
+
+綾華：いいな
+　綾華もＣＭに出てみたいよ
+　そうすれば、ナビちゃんみたいに綾華も何かもらえるかもしれないのに、人気も出るし
+素子：浅ましいのよ、あなたは！
+綾華：ふん？そっか…
+　素子ちゃんったら、メイちゃんが羨ましいんでしょ！
+素子：なっ！
+　…うっ…
+　あなたのそうゆう図太くて無神経なところが気に入らないのよ！
+ナビ：あぅ！ヒステリー！
+素子：何ですって！？
+優子：それぐらいにしておきなさい
+　気が高ぶってると霊に食われてしまう
+　ほら、素子の後ろに、悪霊がいるわ
+かんな：あ…悪霊？
+　ん…！
+素子：か、かんな！
+　うっ…いい加減な事言って、かんな脅かさないで！
+　このエセ霊能力者！
+　ちょっと、かんな[も?]かんなよ！
+　あなた、こんな事で[一時?]気絶してたら、今日の撮影なんてできっこないでしょ！
+
+
+おれが大切なのは、お前
+だけだって。
+
+信じられる[と?]でも思ってるの?!\n
+かんなの次は私。私の次は綾華？\n
+それとも、メイしらね?!
+
+メイ：あ！
+笹木：綾華さん！
+沢田：いかん！落ちるぞ！
+メイ：綾華！
+メイ：あ…
+メイ：綾華！
+
+メイ：綾華…
+メイ：あっ！
+メイ：嘘…
+
+メイ：ダーツ…
+　血が…
+ナビ：綾華の胸にも失血が認められます
+　状況からすると、[その血は?]綾華の物だと…
+メイ：うるさい！
+　そんな事分かってる！
+　機械のあんたには、ボクの気持ちなんて分かんないんだ
+　目障りなんだよ
+　とっとと消えてよ！
+沢田：落ち着け[ね?]！
+　ナビに八つ当たりしても仕方ないだろ！
+　死んだ[人?]は戻ってこないんだ
+メイ：違う！
+　綾華は[死んだ?]じゃない！
+　殺されたのよ
+　これを見て[よ?]
+　綾華に刺さってたんだよ
+　綾華の血がついてるんだよ！
+　これでも…まだ綾華が死んだって…
+　幽霊がダーツを投げたというわけ？
+　違う！
+　綾華は誰かに…殺されたんだ！
+
+メイ：おおぉ…
+ナビ：何が「おおぉ」ですか？
+　はぁ…
+　[こんなのが?]あたしの主人だなんて、情けないですぅ
+
+メイ：あ！
+沢田：優子！
+メイ：ダメー…！
+メイ：きゃあ！
+沢田：メイ！優子！
+
+ナビ：メイ
+　メイ、しっかりして下さい
+メイ：あ？
+ナビ：大丈夫ですか、メイ？
+メイ：ボク、助かったのね
+ナビ：笹木さんが受け止めてくれたんです
+笹木：それに、ほら
+　優子さんも無事ですよ
+メイ：え？
+笹木：ちょうどソファの上に落ちたんです
+メイ：優子さん…
+優子：はぁ…バカな子
+　どうして、私なんかを助けようとしたの？
+メイ：さ…ボクにも分かんないよ
+　あなたが憎かったし、正直、殺してやりたかった
+　でも、どうしてかな？
+　落ちていく優子さんが綾華に見えた
+　そしたら、体が勝手に動いてたんだよ
+笹木：優子さん、怪我をしてるかもしれません
+　まだ動かないで下さい
+優子：大丈夫
+　逃げたりはしないの
+メイ：（ごめん、綾華
+　ボクには、優子さんでも見殺しなんて出来なかったの）
+ナビ：メイ…
+メイ：（でも、綾華[は許してくれるよ?]ね）
+メイ：行こうか、ナビ
+ナビ：はい！
+
+立花：ごめんな、綾華
+　仕事ばかりで、ロクにお前の事を構ってやらなかった
+　綾華…
+　この父さんを許してくれ
+
+メイ：はぁ…きれいな海
+メイ：旅行！？
+素子：そう！
+　３０時間の船の旅！
+　南の孤島のきれいな海で、泳いで食べて遊びまくるの！
+メイ：素子…
+　あんた、ずいぶん性格が変わったね？
+素子：あら、[心外?]ね
+　私は前から素直で明るく、美しい女優を目指してるんだけどなぁ〜
+　そんな事より、メイ
+　あなたいつまで落ち込んでるつもり？
+メイ：べ、別に…落ち込[んで?]なんか…
+素子：はぁ…
+　そりゃ、綾華の事でショックなの分かるけど…
+　でもね、落ち込んでだって、綾華は生き返らないわ
+メイ：そうね
+素子：んもう、若いんだからさ！
+　悩んでないで、パーッと行こうよ、パーッと！
+
+メイ：（３０時間の船の旅か…）
+素子：メイ…
+　メイ
+　メイ！
+メイ：あ
+素子：何ボーっとしてんのよ？
+　食堂に行くんでしょ
+　船の朝食楽しみにしてたじゃない？
+メイ：ごめん、ごめん
+　それじゃ、行こうか？
+
+ナビ：この１号室の天井裏も、３号室につながっているん[でしたよ?]ね？
+メイ：ちょっと登ってみようか？
+メイ：あ…開かない〜！
+ナビ：開きませんか？
+メイ：少し[???]、[開く?]んだけどね
+　[板?]の上に、何か乗ってるみたいで…
+　ど、どうしても…開かない…
+　うわああ！
+
+素子：事件は解決したっていうのに、浮かない顔してるわね
+メイ：うん
+素子：言ってごらんなさいよ
+メイ：ボク、ちょっといい気になりすぎてたかなって
+　研究がうまくいかなくて[言?]って、思い詰めてた木原さんの顔を見てたら、「犯人はあなただ！」なんて、まるで[クイズでも解いている?]みたいに
+　自分が、面白半分で、探偵を気取っていたんじゃないかって気がして
+　これで、本当によかったのかなって
+素子：何言ってんのよ
+　指輪が戻って、奥さんはお喜び、木原さんだって、この出来心だっただけで、今は[見つか?]ってよかったんだって思ってるわよ
+　だからさ、元気出しなさいよ！
+メイ：そうだね
+　ありがとう、素子
+素子：えっ
+　何[改まって?]んのよ、バカ[ね?]
+　色々悩みすぎて、[むっかし??][くなった?]んじゃないの
+メイ：えへへ
+　そうだね
+　やっぱり、素子みたいに遊ぶ事ばかり考え[てなきゃ?]、ダメかな？
+素子：言ったわね！
+　よーし！
+　島に着いたら、人生の楽しみ方をたっぷり[決断??手伝いし??]たげるからね
+　覚悟してなさい！
+メイ：はい[って言って?]
+　よろしくお願いします
+２人：（笑）
+
+綾華：ねぇねぇパパ！
+　綾華ね、友達ができたんだよ！
+
+メイ：こ、ここまで来て、逃げられるなんて…
+
+立花：ジ・エンド
+
+素子：ふ〜ん
+　で、立花さんに助けられたんだ
+　結構やるじゃないの！あの親父も
+ナビ：これからが大変なんだなんて[ぼやいて?]ましたけどね
+　とまれ、事件が解決してよかったですよ
+ナビ：武藤さんの息子さんは亡くなってしまいましたけど、渡部さんは意識を取り戻しまいしたし
+メイ：お婆さんと２人で、[出家?]するんだって
+　あの２人には、せめて平穏に暮らして欲しいよね
+素子：私だって、平穏の生活が欲しいわの
+　メイと一緒にいると、必ずとんでもない事件に巻き込まれる[んだもん?]
+ナビ：とかなんとか言っちゃって、ほんと素子？
+　それが楽しみなんでしょ？
+素子：ったら、分かっちゃった
+２人：（笑）
+メイ：ああ！ボクだって、好きで巻き込まれてるわけじゃない〜！
+
+キャスター：捕まった榊被告は、以前黙秘を続けており、『組織』の全貌暴くには、まだまだ時間がかかると思われます
+　また、警察の[慎重すぎる対応?]に、全ての情報を公開していないのではないかとの声もあり、組織と警察の関係を示唆する憶測も流れています
+　さて次は、今お伝えした事件も解決した、話題の女性のニュースです
+
+メイさん
+一日署長
+
+キャスター：数々の事件の解決に貢献し、その活躍ぶりが話題となっている、女優のメイ・スターさんが今日、さつきヶ丘警察署にて、表彰されました
+被害者：はぁっ！！
+キャスター：この[表彰?]に伴い、[メイさん?]は一日署長として、午後３時[に?]行われる、秋の交通安全パレードに参加されます
+
+
+
+わたしは一匹の獣が海の中から
+現れるのを見た。
+
+これには、１０の目、１０の耳、
+そして１０の鼻があった。
+
+
+
+熱く金色に輝く王冠を戴き、獣は集
+いし人々に伝えた。
+
+　「哀れな子らよ。
+　　お前達の前に道はない。
+　　
+　　先へ進みたいのならば、
+　　私の言葉に従うがよい。」
+
+かくして、人々は真の世界へと足を
+踏み入れた。
+
+
+
+
+
+園木達郎氏へ
+
+草薙刑事が死亡した際に検死を担当
+した医師が、その直後に失踪してい
+る。
+名前は窪田晃（くぼたあきら）。
+組織も消息をつかめなかった様だが
+１年ほど前に、さつきヶ丘に戻って
+いた事が判明。現在は「木下哲雄」
+との偽名を用いて、４丁目のアパー
+トに住んでいる。
+
+
+なお、組織の榊が戻ってきている。
+注意されたし。
+
+
+
+
+　　　　　　　　以上。「獣」より
+
+
+
+組織暗躍
+草薙事件の真実
+
+ノイローゼ？　自
+　　　　刑事　殺
+　　　　　　　か
+ヒュースポーツ
+６月３０日（金）
+
+草薙英二氏、
+　謎の自殺
+
+麻薬中毒！？
+草薙氏、密売組織と関係か？
+
+
+
+
+
+被験者　草薙英二
+症状　　外傷は認められない。
+　　　　心臓が衰弱しており、虚脱
+　　　　症状が認められる。
+　　　　また一部に脱水症状も確認
+死因　　バルビツール酸系の睡眠薬
+　　　　を大量摂取した事による、
+　　　　中枢神経系の抑制。
+報告者　窪田晃
+　　　　　　　　　　　　　大瀧
+
+
+アップルパイ
+パンケーキ
+サンドイッチ
+スパゲッティ
+コーヒー
+レモンティー
+ミルクティー
+
+
+
+被験者　草薙英二
+症状　　腹部に１，胸部に２箇所の
+　　　　銃創があり、かなりの出血
+　　　　が認められる。
+　　　　各銃創から１個ずつ、計３
+　　　　個の弾丸を発見。うち１発
+　　　　は心臓を貫通。
+死因　　損傷による心機能の停止
+報告者　窪田晃
+
+この検案書は、故草薙英二の検死結
+果を報告するものである。
+しかしながら、さつきヶ丘警察署長
+である大瀧剛に強要きれ、私が事実
+とは異なる報告をした為に、草薙氏
+は自殺として処理されてしまった。
+いつの日か‥いつの日か大瀧の罪を
+世に知らしめる為に、本物の検案書
+を証拠として隠しておこう。
+
+榊：検案書を見つけ出していだたいた事には感謝いたしますが
+　その内容を知られるわけにはいかないんですよ
+メイ：榊
+榊：それにしても…
+　あの情報屋で[会ってから?]、あなたの行動を[見張っていた正解?]でしたよ
+　おかげで本物の検案書を手に入れる事は出来たのですから
+メイ：そう思うのは、まだ早いんじゃない
+　検案書は僕が持ってるんだよ
+榊：同じ事ですよ
+　あなた、ここで私に殺されるんですから
+　父上と同じようにも
+榊：[小魚?]！
+ナビ：撃たせません！
+榊：じゃ、邪魔な！
+メイ：あなたが…
+　あなたが僕のお父さんを…
+
+沢田：ええ、沢田です
+　おお、笹木か！
+　お前ら、どこにいるんだ？
+　うん…ふん…ふん…
+　何！？本気か！
+　
+大瀧：予定より５分の遅刻だな
+　直に式典が始まってしまうのではないかね
+笹木：すみません
+　ちょっと手違いがありますので
+大瀧：ま、法に触れない程度[に?]急いでもらうか
+大瀧：（もっとも急いだところで、無駄だがね
+　主賓のお嬢様は、永遠に来ない[のだから?]）
+大瀧：た、立花！？
+
+大瀧：お前は…
+メイ：大瀧剛
+　ボクは…あなたを許さない！
+
+大瀧：バ、バカな…
+　そんな…まさか…！
+メイ：そのまさかだよ
+　式典会場のモニターにも、１丁目の街頭テレビにも…
+　ううん…それだけじゃない
+　どこの街のどこの家のテレビにも、この映像が中継されてる
+　テレビを見ている人たち全てが聞いていた、あなた…あなた自身が罪を認めた、その言葉を
+　何千人、何万人の人々が証人です
+　大瀧署長…
+　あなたを逮捕します！
+
+メイ：あれから、１年が経ちました
+　みんな一つずつ年を取って、それぞれの道を歩いています
+　立花さんは、事件[によって?]、あちこち忙しく飛び回ってるし
+　葉は、新しいお母さんを未だに、おねえちゃんなんて呼んでるみたい
+　かんなは、今ではバラエティの人気者
+　イメージじゃないなぁなんて思ってたけど、以外に向いてるのかも
+
+メイ：素子は舞台に熱中してる
+　次の舞台のために、一生懸命に稽古してるから、最近は[間に合ってない?]んだよね？
+　で、ボクはといういと…
+ナビ：ふん、いい加減に覚えました？
+メイ：うるさいな
+　だから、こうして本読みしてるんじゃない
+笹木：メイさん！本番はじまります
+メイ：は〜い！
+メイ：本当、色々な事があったけど…
+　メイは、元気でやってます！
+
+夜が更けて　傘をさす
+　　　　　　高層ビルの街
+yoru ga fukete kasa o sasu
+kousou biru no machi
+
+The evening grows late, and I spread my umbrella
+in the city of high-rise buildings
+　　　　　　
+　　夢の雫　飛ばそう
+　　　　　　クルクルまわして
+yume no shizuku tobasou
+kurukuru mawashite
+
+Spatter the droplets of dreams
+Spin them round and round
+　　　　　　
+　　街の灯に　輝いた
+　　　　　　素敵なプレゼント
+machi no hi ni kagayaita
+suteki na purezento
+
+A wonderful present sparkling in the city lights
+　　　　　　
+　　まだ見ぬあなたまで
+　　　　　　とどけこの想い
+mada minu anata made
+todoke kono omoi
+
+Deliver these thoughts to you, whom I still don't see
+　　　　　　
+　　恋のヒントは
+　　瞳が手がかり
+koi no hinto wa
+hitomi ga tegakari
+
+The pupils are the clue to a hint of love
+
+　悩んで　集める
+　　　　　　インフォメーション
+nayande atsumeru
+infomeeshon
+
+Troubled, I gather
+information
+
+　恋をしようよ
+　　　　突き止めたいね
+　　　　　　あぶない事件
+koi o shiyou yo
+tsukitometai ne
+abunai jiken
+
+Let's fall in love
+Don't you want to figure out
+a dangerous case?
+
+　　隠された　　　真実を
+　　探して
+　　見つけ出そう
+kakusareta shinjitsu o
+sagashite
+mitsukedasou
+
+Let's look for the hidden truths
+and find them out
+
+　恋をしようよ
+　　　　巻き込まれたい
+　　　　　　あぶない事件
+koi o shiyou yo
+makikomaretai
+abunai jiken
+
+Let's fall in love
+I want to be enveloped in
+a dangerous case
+
+　　このままじゃ
+　　眠れない
+kono mama ja
+nemurenai
+
+I can't sleep if I leave things like this
+
+　やるせない
+　　　　Ｒａｉｎｙ　ｎｉｇｈｔ
+yarusenai
+RAINY NIGHT
+
+on a melancholic rainy night
+
+
+メイ：これは、ＨＥシステムのＣＤＲＯＭディスクです
+　２曲目に、コンピュータ用データが入っていますので、再生しないで下さい
+ナビ：これは、ＨＥシステムのＣＤＲＯＭディスクです
+　２曲目に、コンピュータ用データが入っていますので、再生しないで下さい
+素子：レディース・アンド・ジェントルメン！
+　ディス・イズ・早口言葉ショー！
+素子：それでは、一番って、ナビさんにチャレンジしてもらいましょ！
+ナビ：やぁ！三連発いきま〜す！
+ナビ：バスガス爆発
+　隣の客はよく柿食う客だ
+　かえるぴょこぴょこ３（み）ぴょこぴょこ あわせてぴょこぴょこ６（む）ぴょこぴょこ
+ナビ：それじゃですね、次は…素子！いってみよう！
+素子：ちょちょちょちょちょちょっと、いきなりあたしに[振るう?]！？
+　い、ととときょ…
+　あ、うん！
+素子：東京特許許可局
+メイ（？）：それじゃ、綾華
+　あなたの出番ね？
+綾華：ええ〜？
+　綾華、出来るかな…
+　うんっとね…
+綾華：「隣の家に部屋ができたってね[かっこい?]」 (don't know if this is based on a real one or not)
+観客：そりゃ違うって！
+綾華：あははははは！
+　ごめん！次はかんなちゃんだよ！
+かんな：わ、私？
+かんな：(some corruption of 京の生鱈　奈良生まな鰹　生米生麦生卵, i think)
+観客：違うんだね？
+かんな：最後はやっぱり、メイよね？
+メイ：やっぱり
+　そろそろかなぁ[って気合した?]んだよね？
+素子：[ガツン?]っと一発ね！
+　ま、合戦なさい！
+メイ：あ、はい
+メイ：新進シャンソン歌手総出演新春シャンソンショー
+
+
+[農林水産省俊才??]新人歌手新春シャンソンショー
+
+SCENE 1
+闇夜のRainyCry
+SCENE 1
+The Dark Night's Rainy Cry
+^--- integrated into adv-0xBC6 (opening segment), sprites
+
+SCENE 2 前編
+朝風にVainDance
+SCENE 2 Part I
+Vain Dance in the Morning Breeze
+^--- integrated into visual-0x4E4E (intro part 1), sprites
+
+SCENE 2 後編
+白昼はBleakVacation
+SCENE 2 Part II
+Midday is a Bleak Vacation
+^--- dedicated display in adv-0x1FFE, bg
+
+SCENE 3
+黄昏のPopIdol
+SCENE 3
+The Twilight Pop Idol
+^--- integrated into adv-0x3742 (opening cg scene), bg
+
+この物語はフィクションで
+あり、実在する人物・団体
+とは関係ありません。
+This game is a work of fiction, and has no connection to any actually existing persons or organizations.
+
+Private eye
+プライベート　アイ
+　　　　　探偵
+
+メイ：し、死ぬかと思った…
+^-- advscene-0xB86-2
+
+ナビ：綾華の胸にも失血が認められます
+^-- visual-0x4DCE-2
+
+　　　　I dol
+　　　　アイドル
+女優
+
+綾華：これがナビ？
+^-- visual-0x4A4E-0
+　かわいい！
+^-- visual-0x4A4E-1
+
+メイ：あんた、ずいぶん性格が変わったね？
+^-- visual-0x4ECE-7
+
+素子：何[改まって?]んのよ、バカ[ね?]
+^-- visual-0x4FCE-16
+
+悲痛な想いを
+決意に変えて
+Turning heartrending memories into determination
+
+メイ：うるさい！
+^-- visual-0x4DCE-4
+　目障りなんだよ
+^-- visual-0x4DCE-7
+　とっとと消えてよ！
+^-- visual-0x4DCE-8
+
+少女は
+青春の時を
+a girl races through
+
+優子：その人形さんは空中に表示されている映像ってわけ
+^-- clipped from visual-0x4A4E-12; omits the initial つまり
+
+駈け抜ける
+the days of her youth
+
+メイ：綾華！
+^-- visual-0x4BCE-5
+
+
+
+メイ：が〜ん…
+　スクープされちゃった！
+ナビ：何やってんですか！？
+　このゲームはスーパーＣＤＲＯＭ２専用ですよ！
+　[いいん?]ですか！？
+　このゲームは遊ぶには、スーパーシステムカードかスーパーＣＤＲＯＭ対応のＰＣエンジンが必要なんですよ！
+　それなのに、それなのに…！
+素子：ほん〜と！メイったらお間抜けさんなのよね〜？
+メイ：も、素子！
+　何であんたがここにいるの？
+ナビ・素子：では！
+　ゲーム本編でお会いしましょう！
+メイ：そ、それ、ボクのセリフ！
+
+恋をしようよ
+歌：　小野寺麻理子　かないみか
+
+
+
+
+
+
+
+
+
+

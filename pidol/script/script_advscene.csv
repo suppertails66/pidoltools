@@ -1,0 +1,988 @@
+,,,,"//==================================
+// ADV scene block 0xB86
+// statue swings sword
+//==================================",,,
+string,advscene-0xB86-0_0,,,ナビ「あぶなぁい!!,Look out!,"NOTE: some of this transcription is actually taken from the game -- the script block for the first area has unused and unreferenced dialogue for this event, even though it's a separate adv scene. most likely it was originally just an overworld event and they decided to turn it into a cutscene later.",UNTRANSLATED
+string,advscene-0xB86-1_0,,,メイ：うじゃ！,,,UNTRANSLATED
+string,advscene-0xB86-2_0,,,メイ「‥‥‥‥‥‥‥‥‥‥‥‥‥し、死ぬかと思った‥。,I...I thought I was gonna die...,,UNTRANSLATED
+string,advscene-0xB86-3_0,,,綾華「メ、メイちゃん‥‥‥‥よ、よかったぁ。,,"NOTE: and this line is in the in-game transcript but isn't actually in the cutscene, though it's clearly a follow-up to what happens in it",UNTRANSLATED
+string,advscene-0xB86-4_0,,,,,,UNTRANSLATED
+string,advscene-0xB86-5_0,,,,,,UNTRANSLATED
+string,advscene-0xB86-6_0,,,,,,UNTRANSLATED
+string,advscene-0xB86-7_0,,,,,,UNTRANSLATED
+string,advscene-0xB86-8_0,,,,,,UNTRANSLATED
+string,advscene-0xB86-9_0,,,,,,UNTRANSLATED
+,,,,"//==================================
+// ADV scene block 0xCC6
+// motoko reports kanna missing
+//==================================",,,
+string,advscene-0xCC6-0_0,,,沢田：な、何だ！？何があった？,Wh-what? What happened?,,
+string,advscene-0xCC6-1_0,,,メイ：素子、どうしたの？,"Motoko, what's wrong?",,
+string,advscene-0xCC6-2_0,,,素子：うっ…ゆ、幽霊が…,A-a ghost...,,
+string,advscene-0xCC6-3_0,,,メイ：え？,Huh?,,
+string,advscene-0xCC6-4_0,,,素子：ゆ…幽霊が出て…,A...a ghost appeared...,,
+string,advscene-0xCC6-5_0,,,"
+　か、かんなを…かんなを…！[さ?]…",K-Kanna...,NOTE: motoko faints before she finishes the last word; presuming it's さらった (kidnapped),
+string,advscene-0xCC6-6_0,,,,Kanna's been...tak--!,,
+string,advscene-0xCC6-7_0,,,,,,UNTRANSLATED
+string,advscene-0xCC6-8_0,,,,,,UNTRANSLATED
+string,advscene-0xCC6-9_0,,,,,,UNTRANSLATED
+,,,,"//==================================
+// ADV scene block 0xD06
+// motoko shower
+//==================================",,,
+string,advscene-0xD06-0_0,,,素子：い、いやぁっ!!,H-HEY!,NOTE: content is identical to text version of scene,
+string,advscene-0xD06-1_0,,,メイ：‥あ、ゴメ～ン。,"...Oh, sorry.",,
+string,advscene-0xD06-2_0,,,素子：ご、ご、ご、ご、ご、ごめんじゃないわよぉっ!!!!,D-d-d-d-d-don't give me {sorry}!,,
+string,advscene-0xD06-3_0,,,"素子：は、早く‥早く
+　出てってぇ!!",G-get...,,
+string,advscene-0xD06-4_0,,,,Get OUT OF HERE!,,
+string,advscene-0xD06-5_0,,,,,,UNTRANSLATED
+string,advscene-0xD06-6_0,,,,,,UNTRANSLATED
+string,advscene-0xD06-7_0,,,,,,UNTRANSLATED
+string,advscene-0xD06-8_0,,,,,,UNTRANSLATED
+string,advscene-0xD06-9_0,,,,,,UNTRANSLATED
+,,,,"//==================================
+// ADV scene block 0xDC6
+//==================================",,,
+string,advscene-0xDC6-0_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-1_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-2_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-3_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-4_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-5_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-6_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-7_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-8_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-9_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-10_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-11_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-12_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-13_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-14_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-15_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-16_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-17_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-18_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-19_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-20_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-21_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-22_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-23_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-24_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-25_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-26_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-27_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-28_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-29_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-30_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-31_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-32_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-33_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-34_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-35_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-36_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-37_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-38_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-39_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-40_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-41_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-42_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-43_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-44_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-45_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-46_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-47_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-48_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-49_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-50_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-51_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-52_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-53_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-54_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-55_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-56_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-57_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-58_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-59_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-60_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-61_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-62_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-63_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-64_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-65_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-66_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-67_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-68_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-69_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-70_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-71_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-72_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-73_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-74_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-75_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-76_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-77_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-78_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-79_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-80_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-81_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-82_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-83_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-84_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-85_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-86_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-87_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-88_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-89_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-90_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-91_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-92_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-93_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-94_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-95_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-96_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-97_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-98_0,,,,,,UNTRANSLATED
+string,advscene-0xDC6-99_0,,,,,,UNTRANSLATED
+,,,,"//==================================
+// ADV scene block 0xE06
+//==================================",,,
+string,advscene-0xE06-0_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-1_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-2_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-3_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-4_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-5_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-6_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-7_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-8_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-9_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-10_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-11_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-12_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-13_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-14_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-15_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-16_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-17_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-18_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-19_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-20_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-21_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-22_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-23_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-24_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-25_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-26_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-27_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-28_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-29_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-30_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-31_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-32_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-33_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-34_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-35_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-36_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-37_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-38_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-39_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-40_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-41_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-42_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-43_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-44_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-45_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-46_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-47_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-48_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-49_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-50_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-51_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-52_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-53_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-54_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-55_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-56_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-57_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-58_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-59_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-60_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-61_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-62_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-63_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-64_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-65_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-66_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-67_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-68_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-69_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-70_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-71_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-72_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-73_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-74_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-75_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-76_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-77_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-78_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-79_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-80_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-81_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-82_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-83_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-84_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-85_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-86_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-87_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-88_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-89_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-90_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-91_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-92_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-93_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-94_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-95_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-96_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-97_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-98_0,,,,,,UNTRANSLATED
+string,advscene-0xE06-99_0,,,,,,UNTRANSLATED
+,,,,"//==================================
+// ADV scene block 0xE46
+// yuuko shower
+//==================================",,,
+string,advscene-0xE46-0_0,,,メイ：おおぉ…, ,,
+string,advscene-0xE46-1_0,,,ナビ：何が「おおぉ」ですか？,What's the {ooh} for?,,
+string,advscene-0xE46-2_0,,,　はぁ…,(sigh)...,NOTE: I'm only subtitling this because it's virtually inaudible under the music,
+string,advscene-0xE46-3_0,,,　[こんなのが?]あたしの主人だなんて、情けないですぅ,Having someone like THIS for my owner...How pathetic.,,
+string,advscene-0xE46-4_0,,,,,,UNTRANSLATED
+string,advscene-0xE46-5_0,,,,,,UNTRANSLATED
+string,advscene-0xE46-6_0,,,,,,UNTRANSLATED
+string,advscene-0xE46-7_0,,,,,,UNTRANSLATED
+string,advscene-0xE46-8_0,,,,,,UNTRANSLATED
+string,advscene-0xE46-9_0,,,,,,UNTRANSLATED
+,,,,"//==================================
+// ADV scene block 0x138E
+//==================================",,,
+string,advscene-0x138E-0_0,,,ナビ：この１号室の天井裏も、３号室につながっているん[でしたよ?]ね？,The ceiling here in Cabin 1...,,
+string,advscene-0x138E-1_0,,,,"...is connected to Cabin 3, right?",,
+string,advscene-0x138E-2_0,,,メイ：ちょっと登ってみようか？,Why don't I try climbing up?,,
+string,advscene-0x138E-3_0,,,メイ：あ…開かない～！,It...it's not opening!,,
+string,advscene-0x138E-4_0,,,ナビ：開きませんか？,It won't open?,,
+string,advscene-0x138E-5_0,,,メイ：少しだけなら、開くんだけどね…,"It'll open just a little, but...",,
+string,advscene-0x138E-6_0,,,　蓋の上に、何か乗ってるみたいで…,"...it's like there's something on top of the cover, and...",,
+string,advscene-0x138E-7_0,,,　ど、どうしても…開かない…,...i-it won't open...no matter what...,,
+string,advscene-0x138E-8_0,,,　うわああ！,,,UNTRANSLATED
+string,advscene-0x138E-9_0,,,,,,UNTRANSLATED
+string,advscene-0x138E-10_0,,,,,,UNTRANSLATED
+string,advscene-0x138E-11_0,,,,,,UNTRANSLATED
+string,advscene-0x138E-12_0,,,,,,UNTRANSLATED
+string,advscene-0x138E-13_0,,,,,,UNTRANSLATED
+string,advscene-0x138E-14_0,,,,,,UNTRANSLATED
+string,advscene-0x138E-15_0,,,,,,UNTRANSLATED
+string,advscene-0x138E-16_0,,,,,,UNTRANSLATED
+string,advscene-0x138E-17_0,,,,,,UNTRANSLATED
+string,advscene-0x138E-18_0,,,,,,UNTRANSLATED
+string,advscene-0x138E-19_0,,,,,,UNTRANSLATED
+,,,,"//==================================
+// ADV scene block 0x1FFE
+//==================================",,,
+string,advscene-0x1FFE-0_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-1_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-2_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-3_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-4_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-5_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-6_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-7_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-8_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-9_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-10_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-11_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-12_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-13_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-14_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-15_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-16_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-17_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-18_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-19_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-20_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-21_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-22_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-23_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-24_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-25_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-26_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-27_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-28_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-29_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-30_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-31_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-32_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-33_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-34_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-35_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-36_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-37_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-38_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-39_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-40_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-41_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-42_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-43_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-44_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-45_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-46_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-47_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-48_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-49_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-50_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-51_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-52_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-53_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-54_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-55_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-56_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-57_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-58_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-59_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-60_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-61_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-62_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-63_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-64_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-65_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-66_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-67_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-68_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-69_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-70_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-71_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-72_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-73_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-74_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-75_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-76_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-77_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-78_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-79_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-80_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-81_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-82_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-83_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-84_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-85_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-86_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-87_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-88_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-89_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-90_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-91_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-92_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-93_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-94_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-95_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-96_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-97_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-98_0,,,,,,UNTRANSLATED
+string,advscene-0x1FFE-99_0,,,,,,UNTRANSLATED
+,,,,"//==================================
+// ADV scene block 0x20FE
+//==================================",,,
+string,advscene-0x20FE-0_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-1_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-2_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-3_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-4_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-5_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-6_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-7_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-8_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-9_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-10_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-11_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-12_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-13_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-14_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-15_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-16_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-17_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-18_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-19_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-20_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-21_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-22_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-23_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-24_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-25_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-26_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-27_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-28_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-29_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-30_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-31_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-32_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-33_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-34_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-35_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-36_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-37_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-38_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-39_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-40_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-41_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-42_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-43_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-44_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-45_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-46_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-47_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-48_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-49_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-50_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-51_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-52_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-53_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-54_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-55_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-56_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-57_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-58_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-59_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-60_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-61_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-62_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-63_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-64_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-65_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-66_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-67_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-68_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-69_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-70_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-71_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-72_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-73_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-74_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-75_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-76_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-77_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-78_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-79_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-80_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-81_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-82_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-83_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-84_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-85_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-86_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-87_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-88_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-89_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-90_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-91_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-92_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-93_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-94_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-95_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-96_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-97_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-98_0,,,,,,UNTRANSLATED
+string,advscene-0x20FE-99_0,,,,,,UNTRANSLATED
+,,,,"//==================================
+// ADV scene block 0x227E
+//==================================",,,
+string,advscene-0x227E-0_0,,,"謹啓\n
+きみ達がこの手紙を目にしている時
+には、私はこの世にいないでしょう","To whom it may concern,",NOTE: letter's content is (mercifully) also transcribed as in-game dialogue,
+string,advscene-0x227E-1_0,,,,"If you are reading this letter, I have probably departed this world.",,
+string,advscene-0x227E-2_0,,,,,,UNTRANSLATED
+string,advscene-0x227E-3_0,,,"既に察しているかもしれませんが、
+私も、榊も、『組織』の一員です。","Perhaps you have already guessed, but both Sakaki and I...",,
+string,advscene-0x227E-4_0,,,,...are members of the Syndicate.,,
+string,advscene-0x227E-5_0,,,"メイくんに教えた三本岬の洞窟は、
+『組織』が今後の取り引きに用いる
+品を保管しておく為の倉庫。","The cave in Threewood Cape, which I told Miss May of, is a warehouse...",,
+string,advscene-0x227E-6_0,,,,...which the Syndicate uses to store goods for future dealings.,,
+string,advscene-0x227E-7_0,,,,,,UNTRANSLATED
+string,advscene-0x227E-8_0,,,"保管されているのは、警察が押収し
+横流しされた品がほとんどです。",The stored items are almost all articles seized by the police...,,
+string,advscene-0x227E-9_0,,,,...that have been diverted into unlawful channels.,,
+string,advscene-0x227E-10_0,,,"私も‥警察にいた頃は、『組織』の
+一員として押収された麻薬や拳銃な
+どを横流ししていたのです。","When I was in the police, I, too...",,
+string,advscene-0x227E-11_0,,,,I illegally diverted confiscated drugs and guns as a member of the Syndicate.,,
+string,advscene-0x227E-12_0,,,,,,UNTRANSLATED
+string,advscene-0x227E-13_0,,,そして７年前。,And seven years ago...,,
+string,advscene-0x227E-14_0,,,"当時、私の部下であった武藤刑事が
+殺されたのも私が情報を流したのが
+‥原因です。",The cause of my subordinate Detective Mutou's murder then was...,,
+string,advscene-0x227E-15_0,,,,...information that I leaked.,,
+string,advscene-0x227E-16_0,,,"その事件以後は、榊と共に保管され
+ている物資を監視する役目につき、
+島の駐在として暮らしてきました。","Since that incident,",,
+string,advscene-0x227E-17_0,,,,"I, together with Sakaki, have served as a guard for the stored goods,",,
+string,advscene-0x227E-18_0,,,,living as the island's resident officer.,,
+string,advscene-0x227E-19_0,,,"しかし‥その生活も、今日で終りに
+します。",However...I end that life today.,,
+string,advscene-0x227E-20_0,,,"殺された村野くんこそが‥。\n
+７年前、私が殺した武藤刑事の実の
+息子であると知った時‥。",When I learned that the murdered young Murano was...,,
+string,advscene-0x227E-21_0,,,,"...actually the son of Detective Mutou, whom I killed seven years ago...",,
+string,advscene-0x227E-22_0,,,,,,UNTRANSLATED
+string,advscene-0x227E-23_0,,,"そして、あの老婆こそが武藤刑事の
+母親であると悟った時‥。",And when I realized that that old woman was Detective Mutou's mother...,,
+string,advscene-0x227E-24_0,,,"自分の死を迎える時がきたのだと‥
+そう感じたのです。",I sensed that the time had come...to face my own death.,,
+string,advscene-0x227E-25_0,,,"最後に‥勝手な願いとは思いますが
+老婆を助けてあげて欲しいのです。","Lastly...Though it may be a selfish request,",,
+string,advscene-0x227E-26_0,,,,I want you to help the old woman.,,
+string,advscene-0x227E-27_0,,,,,,UNTRANSLATED
+string,advscene-0x227E-28_0,,,"彼女は、以前『組織』の倉庫であっ
+た山中の古寺に隠れ住んでいる事が
+分かっております。","I have learned that she is secretly living in the old temple in the mountains,",,
+string,advscene-0x227E-29_0,,,,which was formerly a Syndicate warehouse.,,
+string,advscene-0x227E-30_0,,,,,,UNTRANSLATED
+string,advscene-0x227E-31_0,,,"『組織』は老婆の命も狙うでしょう
+せめて‥せめて、これ以上の犠牲者
+が出ないように。",The Syndicate will probably target her life as well.,,
+string,advscene-0x227E-32_0,,,,At least...at least...,,
+string,advscene-0x227E-33_0,,,,...try to prevent there from being any more victims.,,
+string,advscene-0x227E-34_0,,,"お願い致します。\n
+　　　　　　　　敬白\n
+　　　　　　　　　　　渡部　吟次",I humbly ask this of you.,,
+string,advscene-0x227E-35_0,,,,"Sincerely, Ginji Watabe.",,
+string,advscene-0x227E-36_0,,,,,,UNTRANSLATED
+string,advscene-0x227E-37_0,,,,,,UNTRANSLATED
+string,advscene-0x227E-38_0,,,,,,UNTRANSLATED
+string,advscene-0x227E-39_0,,,,,,UNTRANSLATED
+,,,,"//==================================
+// ADV scene block 0x22FE
+//==================================",,,
+string,advscene-0x22FE-0_0,,,メイ：こ、ここまで来て、逃げられるなんて…,"T-to come so far, just to lose him...",,
+string,advscene-0x22FE-1_0,,,,,,UNTRANSLATED
+string,advscene-0x22FE-2_0,,,,,,UNTRANSLATED
+string,advscene-0x22FE-3_0,,,,,,UNTRANSLATED
+string,advscene-0x22FE-4_0,,,,,,UNTRANSLATED
+string,advscene-0x22FE-5_0,,,,,,UNTRANSLATED
+string,advscene-0x22FE-6_0,,,,,,UNTRANSLATED
+string,advscene-0x22FE-7_0,,,,,,UNTRANSLATED
+string,advscene-0x22FE-8_0,,,,,,UNTRANSLATED
+string,advscene-0x22FE-9_0,,,,,,UNTRANSLATED
+,,,,"//==================================
+// ADV scene block 0x233E
+//==================================",,,
+string,advscene-0x233E-0_0,,,立花：ジ・エンドだ,The end.,,
+string,advscene-0x233E-1_0,,,,,,UNTRANSLATED
+string,advscene-0x233E-2_0,,,,,,UNTRANSLATED
+string,advscene-0x233E-3_0,,,,,,UNTRANSLATED
+string,advscene-0x233E-4_0,,,,,,UNTRANSLATED
+string,advscene-0x233E-5_0,,,,,,UNTRANSLATED
+string,advscene-0x233E-6_0,,,,,,UNTRANSLATED
+string,advscene-0x233E-7_0,,,,,,UNTRANSLATED
+string,advscene-0x233E-8_0,,,,,,UNTRANSLATED
+string,advscene-0x233E-9_0,,,,,,UNTRANSLATED
+,,,,"//==================================
+// ADV scene block 0x3542
+//==================================",,,
+string,advscene-0x3542-0_0,,,"組織暗躍
+草薙事件の真実","Syndicate's Secret Maneuvers:\n
+The Truth of the Kusanagi Case",,UNTRANSLATED
+string,advscene-0x3542-1_0,,,"ノイローゼ？
+刑事
+自殺か","Neurosis?\n
+Detective: SUICIDE?",,UNTRANSLATED
+string,advscene-0x3542-2_0,,,"草薙英二氏、
+　謎の自殺",Eiji Kusanagi's Mystery Suicide,,UNTRANSLATED
+string,advscene-0x3542-3_0,,,"麻薬中毒！？
+草薙氏、密売組織と関係か？",DRUG ADDICT!? Kusanagi Linked to Smuggling Syndicate?,,UNTRANSLATED
+string,advscene-0x3542-4_0,,,,,,UNTRANSLATED
+string,advscene-0x3542-5_0,,,,,,UNTRANSLATED
+string,advscene-0x3542-6_0,,,,,,UNTRANSLATED
+string,advscene-0x3542-7_0,,,,,,UNTRANSLATED
+string,advscene-0x3542-8_0,,,,,,UNTRANSLATED
+string,advscene-0x3542-9_0,,,,,,UNTRANSLATED
+,,,,"//==================================
+// ADV scene block 0x3602
+//==================================",,,
+string,advscene-0x3602-0_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-1_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-2_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-3_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-4_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-5_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-6_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-7_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-8_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-9_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-10_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-11_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-12_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-13_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-14_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-15_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-16_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-17_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-18_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-19_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-20_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-21_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-22_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-23_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-24_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-25_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-26_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-27_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-28_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-29_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-30_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-31_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-32_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-33_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-34_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-35_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-36_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-37_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-38_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-39_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-40_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-41_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-42_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-43_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-44_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-45_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-46_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-47_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-48_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-49_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-50_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-51_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-52_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-53_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-54_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-55_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-56_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-57_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-58_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-59_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-60_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-61_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-62_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-63_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-64_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-65_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-66_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-67_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-68_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-69_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-70_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-71_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-72_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-73_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-74_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-75_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-76_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-77_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-78_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-79_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-80_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-81_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-82_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-83_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-84_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-85_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-86_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-87_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-88_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-89_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-90_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-91_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-92_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-93_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-94_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-95_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-96_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-97_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-98_0,,,,,,UNTRANSLATED
+string,advscene-0x3602-99_0,,,,,,UNTRANSLATED
+,,,,"//==================================
+// ADV scene block 0x3802
+//==================================",,,
+string,advscene-0x3802-0_0,,,沢田：ええ、沢田です,"Hi, this is Sawada.",,
+string,advscene-0x3802-1_0,,,　おお、笹木か！,"Oh, Sasaki!",,
+string,advscene-0x3802-2_0,,,　お前ら、どこにいるんだ？,Where are you guys?,,
+string,advscene-0x3802-3_0,,,　うん…ふん…ふん…,,,UNTRANSLATED
+string,advscene-0x3802-4_0,,,　何！？本気か！,WHAT!? Are you serious!?,,
+string,advscene-0x3802-5_0,,,,,,UNTRANSLATED
+string,advscene-0x3802-6_0,,,,,,UNTRANSLATED
+string,advscene-0x3802-7_0,,,,,,UNTRANSLATED
+string,advscene-0x3802-8_0,,,,,,UNTRANSLATED
+string,advscene-0x3802-9_0,,,,,,UNTRANSLATED
+,,,,"//==================================
+// ADV scene block 0x3842
+//==================================",,,
+string,advscene-0x3842-0_0,,,大瀧：予定より５分の遅刻だな,You're five minutes behind schedule.,,
+string,advscene-0x3842-1_0,,,　直に式典が始まってしまうのではないかね,"The parade will be starting very soon, won't it?",,
+string,advscene-0x3842-2_0,,,笹木：すみません,Sorry about that.,,
+string,advscene-0x3842-3_0,,,　ちょっと手違いがありますので,There was a little mix-up.,,
+string,advscene-0x3842-4_0,,,大瀧：ま、法に触れない程度[で?]急いでもらうか,"Well, hurry along at a speed that won't get you pulled over.",,
+string,advscene-0x3842-5_0,,,大瀧：（もっとも急いだところで、無駄だがね,(Though I suppose hurrying's pointless anyway.),,
+string,advscene-0x3842-6_0,,,　主賓のお嬢様は、永遠に来ない[のだから?]）,"(After all, the lady of honor will never be arriving.)",,
+string,advscene-0x3842-7_0,,,大瀧：た、立花！？,T-Tachibana!?,,
+string,advscene-0x3842-8_0,,,,,,UNTRANSLATED
+string,advscene-0x3842-9_0,,,,,,UNTRANSLATED
+,,,,"//==================================
+// ADV scene block 0x3882
+//==================================",,,
+string,advscene-0x3882-0_0,,,大瀧：お前は…,You're...,,
+string,advscene-0x3882-1_0,,,メイ：大瀧剛,Tsuyoshi Ohtaki.,,
+string,advscene-0x3882-2_0,,,　ボクは…あなたを許さない！,I will...,,
+string,advscene-0x3882-3_0,,,,...never forgive you!,,
+string,advscene-0x3882-4_0,,,,,,UNTRANSLATED
+string,advscene-0x3882-5_0,,,,,,UNTRANSLATED
+string,advscene-0x3882-6_0,,,,,,UNTRANSLATED
+string,advscene-0x3882-7_0,,,,,,UNTRANSLATED
+string,advscene-0x3882-8_0,,,,,,UNTRANSLATED
+string,advscene-0x3882-9_0,,,,,,UNTRANSLATED
+,,,,"//==================================
+// ADV scene block 0x3902
+//==================================",,,
+string,advscene-0x3902-0_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-1_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-2_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-3_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-4_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-5_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-6_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-7_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-8_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-9_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-10_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-11_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-12_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-13_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-14_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-15_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-16_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-17_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-18_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-19_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-20_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-21_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-22_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-23_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-24_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-25_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-26_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-27_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-28_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-29_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-30_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-31_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-32_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-33_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-34_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-35_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-36_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-37_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-38_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-39_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-40_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-41_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-42_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-43_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-44_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-45_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-46_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-47_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-48_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-49_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-50_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-51_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-52_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-53_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-54_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-55_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-56_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-57_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-58_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-59_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-60_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-61_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-62_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-63_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-64_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-65_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-66_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-67_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-68_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-69_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-70_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-71_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-72_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-73_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-74_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-75_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-76_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-77_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-78_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-79_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-80_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-81_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-82_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-83_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-84_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-85_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-86_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-87_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-88_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-89_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-90_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-91_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-92_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-93_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-94_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-95_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-96_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-97_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-98_0,,,,,,UNTRANSLATED
+string,advscene-0x3902-99_0,,,,,,UNTRANSLATED
+,,,,"//==================================
+// ADV scene block 0x3982
+//==================================",,,
+string,advscene-0x3982-0_0,,,"夜が更けて　傘をさす
+　　　　　　高層ビルの街","
+#BREAKGROUP()
+The evening grows late, and I spread my umbrella"," 
+#BREAKGROUP()
+The evening grows late, and I spread my umbrella",
+string,advscene-0x3982-1_0,,,"　　夢の雫　飛ばそう
+　　　　　　クルクルまわして","
+#BREAKGROUP()
+in a city of skyscrapers"," 
+#BREAKGROUP()
+in the city of high-rise buildings",
+string,advscene-0x3982-2_0,,,"　　街の灯に　輝いた
+　　　　　　素敵なプレゼント","
+#BREAKGROUP()
+Spatter the droplets of dreams"," 
+#BREAKGROUP()
+Spatter the droplets of dreams",
+string,advscene-0x3982-3_0,,,"　　まだ見ぬあなたまで
+　　　　　　とどけこの想い","
+#BREAKGROUP()
+Spin them round and round"," 
+#BREAKGROUP()
+Spin them round and round",
+string,advscene-0x3982-4_0,,,"　　恋のヒントは
+　　瞳が手がかり","
+#BREAKGROUP()
+Sparkling in the city lights,"," 
+#BREAKGROUP()
+Sparkling in the city lights,",
+string,advscene-0x3982-5_0,,,"　悩んで　集める
+　　　　　　インフォメーション","
+#BREAKGROUP()
+a wonderful present"," 
+#BREAKGROUP()
+a wonderful present",
+string,advscene-0x3982-6_0,,,"　恋をしようよ
+　　　　突き止めたいね
+　　　　　　あぶない事件","
+#BREAKGROUP()
+Deliver these thoughts to you,"," 
+#BREAKGROUP()
+Deliver these thoughts to you,",
+string,advscene-0x3982-7_0,,,"　　隠された　　　真実を
+　　探して
+　　見つけ出そう","
+#BREAKGROUP()
+whom I don't yet see"," 
+#BREAKGROUP()
+whom I still don't see",
+string,advscene-0x3982-8_0,,,"　恋をしようよ
+　　　　巻き込まれたい
+　　　　　　あぶない事件","
+#BREAKGROUP()
+The pupils are the clue"," 
+#BREAKGROUP()
+The pupils are the clue",
+string,advscene-0x3982-9_0,,,"　　このままじゃ
+　　眠れない","
+#BREAKGROUP()
+to a hint of love"," 
+#BREAKGROUP()
+to a hint of love",
+string,advscene-0x3982-10_0,,,"　やるせない
+　　　　Ｒａｉｎｙ　ｎｉｇｈｔ","
+#BREAKGROUP()
+Troubled, I gather"," 
+#BREAKGROUP()
+Troubled, I gather",
+string,advscene-0x3982-11_0,,,,"
+#BREAKGROUP()
+information"," 
+#BREAKGROUP()
+information",
+string,advscene-0x3982-12_0,,,,"
+#BREAKGROUP()
+Let's fall in love\n
+Don't you want to figure out"," 
+#BREAKGROUP()
+Let's fall in love\n
+Don't you want to figure out",
+string,advscene-0x3982-13_0,,,,,,UNTRANSLATED
+string,advscene-0x3982-14_0,,,,"
+#BREAKGROUP()
+a dangerous case?"," 
+#BREAKGROUP()
+a dangerous case?",
+string,advscene-0x3982-15_0,,,,"
+#BREAKGROUP()
+Let's look for the hidden truths"," 
+#BREAKGROUP()
+Let's look for the hidden truths",
+string,advscene-0x3982-16_0,,,,"
+#BREAKGROUP()
+and find them out"," 
+#BREAKGROUP()
+and find them out",
+string,advscene-0x3982-17_0,,,,,,UNTRANSLATED
+string,advscene-0x3982-18_0,,,,"
+#BREAKGROUP()
+Let's fall in love\n
+I want to be enveloped in"," 
+#BREAKGROUP()
+Let's fall in love\n
+I want to be enveloped in",
+string,advscene-0x3982-19_0,,,,,,UNTRANSLATED
+string,advscene-0x3982-20_0,,,,"
+#BREAKGROUP()
+a dangerous case"," 
+#BREAKGROUP()
+a dangerous case",
+string,advscene-0x3982-21_0,,,,"
+#BREAKGROUP()
+I can't sleep leaving things like this"," 
+#BREAKGROUP()
+I can't sleep leaving things like this",
+string,advscene-0x3982-22_0,,,,"
+#BREAKGROUP()
+on a melancholic rainy night"," 
+#BREAKGROUP()
+on a melancholic rainy night",
+string,advscene-0x3982-23_0,,,"恋をしようよ
+歌： 小野寺麻理子　かないみか","
+#BREAKGROUP()
+Koi o Shiyou yo\n
+Vocals: Mariko Onodera, Mika Kanai",,
+string,advscene-0x3982-24_0,,,恋をしようよ,"
+#BREAKGROUP()
+Koi o Shiyou yo",,
+string,advscene-0x3982-25_0,,,,,,UNTRANSLATED
+string,advscene-0x3982-26_0,,,,,,UNTRANSLATED
+string,advscene-0x3982-27_0,,,,,,UNTRANSLATED
+string,advscene-0x3982-28_0,,,,,,UNTRANSLATED
+string,advscene-0x3982-29_0,,,,,,UNTRANSLATED

@@ -1,0 +1,15 @@
+.unbackground 16477 24575
+.define genSpriteTable $73b2
+.define playCdTrack $6ed5
+.define cplayAdpcm $6f09
+.define setSceneTimer $7228
+.define currentSpriteCount $3324
+.define doObjTimerSet1 $6fc5
+.define doObjTimerSet2 $717e
+.define sceneVramCopy $65ec
+.define sceneTilemapCopy $6719
+.define fadeArrayBase $395d
+.define fadeOn $395f
+.define fadeBgBase $396c
+.define fadeSpriteBase $396e
+.define readControllers $4cf2

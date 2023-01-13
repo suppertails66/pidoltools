@@ -1,0 +1,63 @@
+set basepattern=288
+set patternoffset=-256
+set paletteoffset=-7
+
+#set xoffset=-136
+#set yoffset=-104
+set xorigin=88
+set yorigin=0
+
+#============
+# file 0: white script
+#============
+
+add x=0   y=0x00  w=32 h=16 pri=0 pal=7
+add x=42  y=0x00  w=32 h=16 pri=0 pal=8
+add x=25  y=0x00  w=16 h=16 pri=0 pal=7
+add x=66  y=0x00  w=16 h=16 pri=0 pal=8
+
+outputSprites "out/grp/title_files_0_spr.bin"
+
+#============
+# file 1: red script
+#============
+
+add x=0   y=0x18  w=16 h=16 pri=0 pal=7
+add x=11  y=0x18  w=16 h=16 pri=0 pal=7
+add x=29  y=0x18  w=32 h=16 pri=0 pal=8
+add x=38  y=0x18  w=32 h=16 pri=0 pal=8
+
+outputSprites "out/grp/title_files_1_spr.bin"
+
+#============
+# file 2: blue script
+#============
+
+add x=0   y=0x30  w=32 h=16 pri=0 pal=7
+add x=33  y=0x30  w=32 h=16 pri=0 pal=8
+add x=42  y=0x30  w=32 h=16 pri=0 pal=8
+
+outputSprites "out/grp/title_files_2_spr.bin"
+
+#============
+# file 3: green script
+#============
+
+add x=0   y=0x48  w=32 h=16 pri=0 pal=8
+add x=42  y=0x48  w=32 h=16 pri=0 pal=8
+add x=23  y=0x48  w=16 h=16 pri=0 pal=8
+add x=66  y=0x48  w=16 h=16 pri=0 pal=8
+
+outputSprites "out/grp/title_files_3_spr.bin"
+
+#============
+# file 4: black script
+#============
+
+add x=0   y=0x60  w=32 h=16 pri=0 pal=8
+add x=40  y=0x60  w=32 h=16 pri=0 pal=8
+add x=22  y=0x60  w=16 h=16 pri=0 pal=8
+add x=65  y=0x60  w=16 h=16 pri=0 pal=8
+
+outputSprites "out/grp/title_files_4_spr.bin"
+#outputPreviewGrp "test_preview.png"

@@ -1,0 +1,96 @@
+set basepattern=96
+set patternoffset=-96
+
+# the game is forcing the lower part of the screen to black
+# via line interrupts, and since the new subtitle is two lines
+# rather than one, we have to shift everything up to keep it
+# out of the cropped area
+#set yoffset=-24
+
+#============
+# title
+#============
+
+#set xoffset=-136
+#set yoffset=-104
+#set xorigin=136
+#set yorigin=104
+set xorigin=128
+set yorigin=128
+
+add x=0x2D  y=73  w=32 h=16 pri=0 pal=0
+add x=0x4D  y=73  w=32 h=16 pri=0 pal=0
+add x=0x6D  y=73  w=32 h=16 pri=0 pal=0
+add x=0x8D  y=73  w=32 h=16 pri=0 pal=0
+add x=0xAD  y=73  w=32 h=16 pri=0 pal=0
+add x=0xCD  y=73  w=16 h=16 pri=0 pal=0
+# comma
+add x=128   y=89  w=16 h=16 pri=0 pal=0
+
+outputSprites "out/grp/scene2a_title_spr.bin"
+
+#============
+# subtitle 0
+#============
+
+set xorigin=128
+set yorigin=128
+
+add x=34  y=127 w=32 h=16 pri=0 pal=1
+add x=53  y=127 w=32 h=16 pri=0 pal=1
+
+outputSprites "out/grp/scene2a_subtitle0_spr.bin"
+
+#============
+# subtitle 1
+#============
+
+set xorigin=128
+set yorigin=128
+
+add x=0x58 y=127 w=32 h=16 pri=0 pal=2
+add x=0x78 y=127 w=32 h=16 pri=0 pal=2
+add x=0x7D y=127 w=32 h=16 pri=0 pal=2
+
+outputSprites "out/grp/scene2a_subtitle1_spr.bin"
+
+#============
+# subtitle 2
+#============
+
+set xorigin=128
+set yorigin=128
+
+add x=0xA2 y=127 w=32 h=16 pri=0 pal=3
+add x=0xC2 y=127 w=32 h=16 pri=0 pal=3
+
+outputSprites "out/grp/scene2a_subtitle2_spr.bin"
+
+#============
+# subtitle 3
+#============
+
+set xorigin=128
+set yorigin=128
+
+add x=0x2D y=154 w=32 h=16 pri=0 pal=4
+add x=0x4D y=154 w=32 h=16 pri=0 pal=4
+add x=0x69 y=154 w=32 h=16 pri=0 pal=4
+# descenders
+add x=102  y=170 w=32 h=16 pri=0 pal=4
+
+outputSprites "out/grp/scene2a_subtitle3_spr.bin"
+
+#============
+# subtitle 4
+#============
+
+set xorigin=128
+set yorigin=128
+
+add x=0x8C y=154 w=32 h=16 pri=0 pal=5
+add x=0xAC y=154 w=32 h=16 pri=0 pal=5
+add x=0xCC y=154 w=16 h=16 pri=0 pal=5
+
+outputSprites "out/grp/scene2a_subtitle4_spr.bin"
+#outputPreviewGrp "test_preview.png"

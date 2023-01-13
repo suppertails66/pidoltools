@@ -1,0 +1,346 @@
+string,case3-pc-0_0,,,"わたしは一匹の獣が海の中から
+現れるのを見た。
+
+これには、１０の目、１０の耳、
+そして１０の鼻があった。","\n
+\n
+I saw a beast appear from the ocean.\n
+\n
+\n
+It had ten eyes, ten ears, and ten noses.",,
+string,case3-pc-1_0,,,"熱く金色に輝く王冠を戴き、獣は集
+いし人々に伝えた。
+
+　「哀れな子らよ。
+　　お前達の前に道はない。
+　　
+　　先へ進みたいのならば、
+　　私の言葉に従うがよい。」
+
+かくして、人々は真の世界へと足を
+踏み入れた。","\n
+\n
+Donning a crown sparkling fiercely in gold, the beast spoke to the assembled people.\n
+\n
+\n
+ ""O pitiful children.\n
+  There is no road before you.\n
+\n
+\n
+  If you wish to move forward,\n
+  follow my words.""\n
+\n
+\n
+Thus did the people set foot into the true world.",,
+string,case3-pc-2_0,,,"園木達郎氏へ
+
+草薙刑事が死亡した際に検死を担当
+した医師が、その直後に失踪してい
+る。
+名前は窪田晃（くぼたあきら）。
+組織も消息をつかめなかった様だが
+１年ほど前に、さつきヶ丘に戻って
+いた事が判明。現在は「木下哲雄」
+との偽名を用いて、４丁目のアパー
+トに住んでいる。","\n
+\n
+To Mr. Tatsurou Sonoki,\n
+\n
+\n
+The doctor who performed the autopsy upon Detective Kusanagi's death disappeared immediately afterwards.\n
+His name is Akira Kubota.\n
+\n
+\n
+It appears the Syndicate wasn't able to figure out his whereabouts either, but I've ascertained that he returned to Satsukigaoka about a year ago. Currently, he's living under the alias of ""Tetsuo Kinoshita"" in an apartment in District 4.",,
+string,case3-pc-3_0,,,"なお、組織の榊が戻ってきている。
+注意されたし。
+
+
+
+
+　　　　　　　　以上。「獣」より","\n
+\n
+\n
+\n
+\n
+\n
+\n
+\n
+\n
+\n
+In addition, Sakaki from the Syndicate has returned. Watch yourself.\n
+\n
+\n
+\n
+\n
+\n
+\n
+\n
+\n
+\n
+        That's all. From ""Beast""",,
+string,case3-pc-4_0,,,【システムＤＩＳＫをセットしてください。】,"\n
+\n
+\n
+\n
+\n
+\n
+\n
+\n
+\n
+\n
+\n
+\n
+\n
+      [                  ]","NOTE: someone saw fit to put the text in a different color from the brackets, so this is split across two different strings so the parts can be colored differently and automatically composited",
+string,case3-pc-5_0,,,,"\n
+\n
+\n
+\n
+\n
+\n
+\n
+\n
+\n
+\n
+\n
+\n
+\n
+       INSERT SYSTEM DISK",,
+string,case3-pc-6_0,,,"なお、組織の榊が戻ってきている。
+注意されたし。","In addition, Sakaki from the Syndicate has returned. Watch yourself.","NOTE: to accommodate the slightly-differently-spaced version of this message in adv-0x36C2, i've split it into two parts",
+string,case3-pc-7_0,,,　　　　　　　　以上。「獣」より,"        That's all. From ""Beast""",,
+string,autopsy-0_0,,,"被験者　草薙英二
+症状　　外傷は認められない。
+　　　　心臓が衰弱しており、虚脱
+　　　　症状が認められる。
+　　　　また一部に脱水症状も確認
+死因　　バルビツール酸系の睡眠薬
+　　　　を大量摂取した事による、
+　　　　中枢神経系の抑制。
+報告者　窪田晃
+　　　　　　　　　　　　　大瀧","\n
+\n
+EXAMINEE: Eiji Kusanagi\n
+\n
+CONDITION: No signs of external\n
+  injury. The heart is weakened,\n
+  and symptoms of collapse are\n
+  present.\n
+  Additionally, signs of\n
+  dehydration confirmed in an\n
+  area.\n
+\n
+CAUSE OF DEATH: Suppression of\n
+  central nervous system\n
+  resulting from ingestion of a\n
+  large quantity of barbituate\n
+  sleeping pills.\n
+\n
+EXAMINER\n
+  Akira Kubota",,
+string,autopsy-1_0,,,,"\n
+\n
+EXAMINEE:\n
+\n
+CONDITION:\n
+\n
+\n
+\n
+\n
+\n
+\n
+\n
+CAUSE OF DEATH:\n
+\n
+\n
+\n
+\n
+\n
+EXAMINER\n
+",,
+string,autopsy-2_0,,,,"\n
+\n
+          Eiji Kusanagi\n
+\n
+           No signs of external\n
+  injury. The heart is weakened,\n
+  and symptoms of collapse are\n
+  present.\n
+  Additionally, signs of\n
+  dehydration confirmed in an\n
+  area.\n
+\n
+                Suppression of\n
+  central nervous system\n
+  resulting from ingestion of a\n
+  large quantity of barbituate\n
+  sleeping pills.\n
+\n
+        \n
+  Akira Kubota",,
+string,autopsy-3_0,,,,,,UNTRANSLATED
+string,autopsy2-0_0,,,"被験者　草薙英二
+症状　　腹部に１，胸部に２箇所の
+　　　　銃創があり、かなりの出血
+　　　　が認められる。
+　　　　各銃創から１個ずつ、計３
+　　　　個の弾丸を発見。うち１発
+　　　　は心臓を貫通。
+死因　　損傷による心機能の停止
+報告者　窪田晃","\n
+\n
+\n
+EXAMINEE: Eiji Kusanagi\n
+\n
+CONDITION: One gunshot wound in\n
+  the abdomen and two in the\n
+  chest, with significant\n
+  bleeding confirmed.\n
+  Three bullets found, one in\n
+  each wound. Of these, one\n
+  pierced the heart.\n
+\n
+CAUSE OF DEATH: Stoppage of the\n
+  heart resulting from injury.
+\n
+\n
+EXAMINER\n
+  Akira Kubota",,UNTRANSLATED
+string,autopsy2-1_0,,,"この検案書は、故草薙英二の検死結
+果を報告するものである。
+しかしながら、さつきヶ丘警察署長
+である大瀧剛に強要きれ、私が事実
+とは異なる報告をした為に、草薙氏
+は自殺として処理されてしまった。
+いつの日か‥いつの日か大瀧の罪を
+世に知らしめる為に、本物の検案書
+を証拠として隠しておこう。","\n
+\n
+\n
+This autopsy report documents the results of the late Eiji Kusanagi's postmortem.\n
+\n
+However, under compulsion from Tsuyoshi Ohtaki, Satsukigaoka Chief of Police, I have been forced to act as if Mr. Kusanagi committed suicide.\n
+\n
+So that someday...someday, Ohtaki's crimes may be made known to the world, I am hiding the true report as evidence.",NOTE: again with the dramatic ellipsis pause in a written document,UNTRANSLATED
+string,autopsy2-2_0,,,,"\n
+\n
+\n
+EXAMINEE:\n
+\n
+CONDITION:\n
+\n
+\n
+\n
+\n
+\n
+\n
+\n
+CAUSE OF DEATH:\n
+\n
+\n
+EXAMINER\n
+",,UNTRANSLATED
+string,autopsy2-3_0,,,,"\n
+\n
+\n
+          Eiji Kusanagi\n
+\n
+           One gunshot wound in\n
+  the abdomen and two in the\n
+  chest, with significant\n
+  bleeding confirmed.\n
+  Three bullets found, one in\n
+  each wound. Of these, one\n
+  pierced the heart.\n
+\n
+                Stoppage of the\n
+  heart resulting from injury.
+\n
+\n
+        \n
+  Akira Kubota",,UNTRANSLATED
+string,cafe-0_0,,,"アップルパイ
+パンケーキ
+サンドイッチ
+スパゲッティ
+コーヒー
+レモンティー
+ミルクティー","Apple Pie\n
+\n
+Pancakes\n
+\n
+Sandwich\n
+\n
+Spaghetti\n
+\n
+Coffee\n
+\n
+Lemon Tea\n
+\n
+Milk Tea",NOTE: layout for menu item names,
+string,cafe-1_0,,,,"\n
+\n
+  A B C D E\n
+\n
+F G H I J K\n
+\n
+L M N O P Q\n
+\n
+R S T U V W\n
+\n
+X Y Z",NOTE: layout for the letter selector window,
+string,cafe-2_0,,,," ABCDEFGHIJKLMNO\n
+PQRSTUVWXYZ     ",NOTE: this is used to generate the font for the letters that display the currently typed input in the lower window. needs to match the order of the characters in table/pidol_menu_en.tbl.,
+string,cafe-3_0,,,,,,UNTRANSLATED
+string,cafe-passwords-0_0,,,";// nothing
+; ******
+;// the actual password
+; ケモノ***
+;// the items listed on the menu
+; アップルパイ
+; パンケーキ*
+; サンドイッチ
+; スパゲッティ
+; コーヒー**
+; レモンティー
+; ミルクティー
+;// spelling variations of some items
+; スパゲティー
+; レモンティ*
+; ミルクティ*
+;// some stuff not on the menu that's also accepted
+;// (there's no special reaction for these beyond the normal animation)
+; カフェオレ*
+; ココア***
+; メロンソーダ
+; コーラ***
+;// ""may star""
+;// like the above, this garners no special reaction beyond being accepted
+;// as a valid food/drink item, so i'm not sure why they bothered
+; メイスター*","// nothing
+************
+// real password
+BEAST*******
+// items on menu
+APPLE*PIE***
+PANCAKES****
+SANDWICH****
+SPAGHETTI***
+COFFEE******
+LEMON*TEA***
+MILK*TEA****
+// originally spelling variation for ""spaghetti"", now used for extra accepted variations on ""beast""
+THE*BEAST***
+THEBEAST****
+// other spelling variations (irrelevant in english)
+MILK*TEA****
+// unlisted items
+CAFE*AU*LAIT
+COCOA*******
+MELON*SODA**
+COLA********
+MAY*STAR****","NOTE: translation uses 12 characters per item, padded with null (*). the translation allows for space characters to be input; these are internally remapped to null to allow trailing spaces to be ignored, so the passwords here use nulls instead of spaces.
+
+NOTE: anticipating something players might try, the translation adds an additional special case so that an input of ""THE BEAST"" will be treated the same as just ""BEAST"".
+and for that one person who won't realize there's a space character despite the fact that it starts out highlighted, ""THEBEAST"" is also accepted, though it pains me slightly.",

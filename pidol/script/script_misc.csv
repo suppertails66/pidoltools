@@ -1,0 +1,138 @@
+string,ayaka-flashback-0_0,,,綾華：ねぇねぇパパ！,"Hey, hey, Papa!",,
+string,ayaka-flashback-1_0,,,　綾華ね、友達ができたんだよ！,Ayaka's made a friend!,,
+string,tonguetwister-0_0,,,メイ：これは、ＨＥシステムのＣＤＲＯＭディスクです,This is an HE System CD-ROM disc.,,
+string,tonguetwister-1_0,,,　２曲目に、コンピュータ用データが入っていますので、再生しないで下さい,"Track 2 contains data for computer use, so please do not play it.",,
+string,tonguetwister-2_0,,,,,,UNTRANSLATED
+string,tonguetwister-3_0,,,ナビ：これは、ＨＥシステムのＣＤＲＯＭディスクです,This is an HE System CD-ROM disc.,,
+string,tonguetwister-4_0,,,　２曲目に、コンピュータ用データが入っていますので、再生しないで下さい,"Track 2 contains data for computer use, so please do not play it.",,
+string,tonguetwister-5_0,,,,,,UNTRANSLATED
+string,tonguetwister-6_0,,,素子：レディース・アンド・ジェントルメン！,Ladies and gentlemen!,,
+string,tonguetwister-7_0,,,　ディス・イズ・早口言葉ショー！,This is...The Tongue Twister Show!,,
+string,tonguetwister-8_0,,,,,,UNTRANSLATED
+string,tonguetwister-9_0,,,素子：それでは、一番って、ナビさんにチャレンジしてもらいましょ！,"All righty then! First off, let's have Navi give it a go!",,
+string,tonguetwister-10_0,,,ナビ：やぁ！三連発いきま～す！,Yaah! Here comes the triple barrage!,,
+string,tonguetwister-11_0,,,ナビ：バスガス爆発,Basu gasu bakuhatsu! Tonari no kyaku wa yoku kaki kuu kyaku da!,"NOTE: my reference for all of these was https://hayakutikotoba.web.fc2.com/, like hell i'd have tried to transcribe them on my own
+
+""Bus gas explosion""",
+string,tonguetwister-12_0,,,　隣の客はよく柿食う客だ,,"""The customer next to me eats lots of persimmon""",UNTRANSLATED
+string,tonguetwister-13_0,,,　かえるぴょこぴょこ３（み）ぴょこぴょこ あわせてぴょこぴょこ６（む）ぴょこぴょこ,Kaeru pyokopyoko mipyokopyoko awasete pyokopyoko mupyokopyoko!,"...okay, i had to look up an explanation here. apparently the idea is basically ""the frogs hop. three frogs hop, and matching them, [three more hop, so] six frogs hop""",
+string,tonguetwister-14_0,,,ナビ：それじゃですね、次は…素子！いってみよう！,"Well then, next is...",,
+string,tonguetwister-15_0,,,,Motoko! Go for it!,,
+string,tonguetwister-16_0,,,素子：ちょちょちょちょちょちょっと、いきなりあたしに[振るう?]！？,"W-w-w-w-w-wait, you're calling on ME all of a sudden!?",,
+string,tonguetwister-17_0,,,　い、ととときょ…,"I, To-To-To-Toky...Right, okay!",,
+string,tonguetwister-18_0,,,　あ、うん！,,,UNTRANSLATED
+string,tonguetwister-19_0,,,素子：東京特許許可局,T-toukyou tokkyo kyoka kyoku!,"""The Tokyo patent approval office""",
+string,tonguetwister-20_0,,,メイ（？）：それじゃ、綾華,"All right, Ayaka...Your turn, eh?",,
+string,tonguetwister-21_0,,,　あなたの出番ね？,,,UNTRANSLATED
+string,tonguetwister-22_0,,,綾華：ええ～？,Huuuh...? Can Ayaka really do it...?,,
+string,tonguetwister-23_0,,,　綾華、出来るかな…,,,UNTRANSLATED
+string,tonguetwister-24_0,,,　うんっとね…,"Umm, right...",,
+string,tonguetwister-25_0,,,綾華：「隣の家に部屋ができたってね[かっこい?]」,A room was built in the house next door! COOL!,"NOTE: don't know if this is based on a real one or not, but obviously it's not right",
+string,tonguetwister-26_0,,,観客：そりゃ違うって！,"Hey, that's wrong!",,
+string,tonguetwister-27_0,,,綾華：あははははは！,,,UNTRANSLATED
+string,tonguetwister-28_0,,,　ごめん！次はかんなちゃんだよ！,Sorry! Next up is Kanna!,,
+string,tonguetwister-29_0,,,かんな：わ、私？,M-me?,,
+string,tonguetwister-30_0,,,かんな：生麦生米生卵,Namamugi namagome namatamago!,"NOTE: apparently the audience thinks she said it wrong; i honestly can't tell
+
+""raw flour, raw rice, raw egg""",
+string,tonguetwister-31_0,,,観客：違うんだね？,"...That's not right, is it?",,
+string,tonguetwister-32_0,,,かんな：最後はやっぱり、メイよね？,"Of course, last is you, May, right?",,
+string,tonguetwister-33_0,,,メイ：やっぱり,"Of course. You were all fired up like {It'll be any minute now,} huh?",,
+string,tonguetwister-34_0,,,　そろそろかなぁ[って気合した?]んだよね？,,CHECK,UNTRANSLATED
+string,tonguetwister-35_0,,,素子：[ガツン?]っと一発ね！,"Knock it out in one swift stroke!\n
+Now, go for it!",,
+string,tonguetwister-36_0,,,　ま、合戦なさい！,,,UNTRANSLATED
+string,tonguetwister-37_0,,,メイ：あ、はい,"Ah, okay.",,
+string,tonguetwister-38_0,,,メイ：[農林水産省俊才??]新人歌手新春シャンソンショー,Nourinsuisanshou shunsai shinjinkashu shinshun shanson shou!,"NOTE: this seems to be based on something with many variations, and i couldn't find any that seem to match this one exactly. the last part is pretty clearly 新人歌手新春シャンソンショー, which is well-attested, but the first part isn't as obvious and is possibly just outright made up. best i can come up with is 農林水産省俊才, for ""the Ministry of Agriculture, Forest, and Fisheries' new genius singer New Year's chanson show"", which is dubious for a lot of reasons. suggestions are welcome.",
+string,tonguetwister-39_0,,,,,,UNTRANSLATED
+string,tonguetwister-40_0,,,,,,UNTRANSLATED
+string,tonguetwister-41_0,,,,,,UNTRANSLATED
+string,tonguetwister-42_0,,,,,,UNTRANSLATED
+string,tonguetwister-43_0,,,,,,UNTRANSLATED
+string,tonguetwister-44_0,,,,,,UNTRANSLATED
+string,tonguetwister-45_0,,,,,,UNTRANSLATED
+string,tonguetwister-46_0,,,,,,UNTRANSLATED
+string,tonguetwister-47_0,,,,,,UNTRANSLATED
+string,tonguetwister-48_0,,,,,,UNTRANSLATED
+string,tonguetwister-49_0,,,,,,UNTRANSLATED
+string,tonguetwister-50_0,,,,,,UNTRANSLATED
+string,tonguetwister-51_0,,,,,,UNTRANSLATED
+string,tonguetwister-52_0,,,,,,UNTRANSLATED
+string,tonguetwister-53_0,,,,,,UNTRANSLATED
+string,tonguetwister-54_0,,,,,,UNTRANSLATED
+string,tonguetwister-55_0,,,,,,UNTRANSLATED
+string,tonguetwister-56_0,,,,,,UNTRANSLATED
+string,tonguetwister-57_0,,,,,,UNTRANSLATED
+string,tonguetwister-58_0,,,,,,UNTRANSLATED
+string,tonguetwister-59_0,,,,,,UNTRANSLATED
+string,tonguetwister-60_0,,,,,,UNTRANSLATED
+string,tonguetwister-61_0,,,,,,UNTRANSLATED
+string,tonguetwister-62_0,,,,,,UNTRANSLATED
+string,tonguetwister-63_0,,,,,,UNTRANSLATED
+string,tonguetwister-64_0,,,,,,UNTRANSLATED
+string,tonguetwister-65_0,,,,,,UNTRANSLATED
+string,tonguetwister-66_0,,,,,,UNTRANSLATED
+string,tonguetwister-67_0,,,,,,UNTRANSLATED
+string,tonguetwister-68_0,,,,,,UNTRANSLATED
+string,tonguetwister-69_0,,,,,,UNTRANSLATED
+string,tonguetwister-70_0,,,,,,UNTRANSLATED
+string,tonguetwister-71_0,,,,,,UNTRANSLATED
+string,tonguetwister-72_0,,,,,,UNTRANSLATED
+string,tonguetwister-73_0,,,,,,UNTRANSLATED
+string,tonguetwister-74_0,,,,,,UNTRANSLATED
+string,tonguetwister-75_0,,,,,,UNTRANSLATED
+string,tonguetwister-76_0,,,,,,UNTRANSLATED
+string,tonguetwister-77_0,,,,,,UNTRANSLATED
+string,tonguetwister-78_0,,,,,,UNTRANSLATED
+string,tonguetwister-79_0,,,,,,UNTRANSLATED
+string,tonguetwister-80_0,,,,,,UNTRANSLATED
+string,tonguetwister-81_0,,,,,,UNTRANSLATED
+string,tonguetwister-82_0,,,,,,UNTRANSLATED
+string,tonguetwister-83_0,,,,,,UNTRANSLATED
+string,tonguetwister-84_0,,,,,,UNTRANSLATED
+string,tonguetwister-85_0,,,,,,UNTRANSLATED
+string,tonguetwister-86_0,,,,,,UNTRANSLATED
+string,tonguetwister-87_0,,,,,,UNTRANSLATED
+string,tonguetwister-88_0,,,,,,UNTRANSLATED
+string,tonguetwister-89_0,,,,,,UNTRANSLATED
+string,tonguetwister-90_0,,,,,,UNTRANSLATED
+string,tonguetwister-91_0,,,,,,UNTRANSLATED
+string,tonguetwister-92_0,,,,,,UNTRANSLATED
+string,tonguetwister-93_0,,,,,,UNTRANSLATED
+string,tonguetwister-94_0,,,,,,UNTRANSLATED
+string,tonguetwister-95_0,,,,,,UNTRANSLATED
+string,tonguetwister-96_0,,,,,,UNTRANSLATED
+string,tonguetwister-97_0,,,,,,UNTRANSLATED
+string,tonguetwister-98_0,,,,,,UNTRANSLATED
+string,tonguetwister-99_0,,,,,,UNTRANSLATED
+string,syscard-error-0_0,,,メイ：が～ん…,Gah...,,
+string,syscard-error-1_0,,,　スクープされちゃった！,They made me into a scoop!,,
+string,syscard-error-2_0,,,ナビ：何やってんですか！？,What are you doing!?,,
+string,syscard-error-3_0,,,　このゲームはスーパーＣＤＲＯＭ２専用ですよ！,"This game is exclusively for the\n
+Super CD-ROM[heart]!",,
+string,syscard-error-4_0,,,　[いいん?]ですか！？,"Got it!? To play this game,",,
+string,syscard-error-5_0,,,　このゲームは遊ぶには、スーパーシステムカードかスーパーＣＤＲＯＭ２対応のＰＣエンジンが必要なんですよ！,,,UNTRANSLATED
+string,syscard-error-6_0,,,,you need a Super System Card or a Super CD-ROM[heart]--compatible PC-Engine!,,
+string,syscard-error-7_0,,,　それなのに、それなのに…！,But you just had to go and do this...!,,
+string,syscard-error-8_0,,,素子：ほん～と！メイったらお間抜けさんなのよね～？,"For REAL! May, girl, you're what we call a grade A ziphead, y'know?",,
+string,syscard-error-9_0,,,,,,UNTRANSLATED
+string,syscard-error-10_0,,,メイ：も、素子！,M-Motoko! What're you doing here?,,
+string,syscard-error-11_0,,,　何であんたがここにいるの？,,,UNTRANSLATED
+string,syscard-error-12_0,,,ナビ・素子：では！,"Well, see you in the real game!",,
+string,syscard-error-13_0,,,　ゲーム本編でお会いしましょう！,,,UNTRANSLATED
+string,syscard-error-14_0,,,メイ：そ、それ、ボクのセリフ！,T-that's my line!,,
+string,syscard-error-15_0,,,,,,UNTRANSLATED
+string,syscard-error-16_0,,,,,,UNTRANSLATED
+string,syscard-error-17_0,,,,,,UNTRANSLATED
+string,syscard-error-18_0,,,,,,UNTRANSLATED
+string,syscard-error-19_0,,,,,,UNTRANSLATED
+string,syscard-error-20_0,,,,,,UNTRANSLATED
+string,syscard-error-21_0,,,,,,UNTRANSLATED
+string,syscard-error-22_0,,,,,,UNTRANSLATED
+string,syscard-error-23_0,,,,,,UNTRANSLATED
+string,syscard-error-24_0,,,,,,UNTRANSLATED
+string,syscard-error-25_0,,,,,,UNTRANSLATED
+string,syscard-error-26_0,,,,,,UNTRANSLATED
+string,syscard-error-27_0,,,,,,UNTRANSLATED
+string,syscard-error-28_0,,,,,,UNTRANSLATED
+string,syscard-error-29_0,,,,,,UNTRANSLATED

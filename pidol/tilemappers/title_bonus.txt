@@ -1,0 +1,23 @@
+#******************************************************************************
+# title bonus tilemap generator
+#******************************************************************************
+
+[Properties]
+palette=out/rsrc_raw/pal/title_bonus_mod.pal
+#freepalettes=
+dest=out/grp/title_bonus_0.bin
+#paldest=out/rsrc_raw/pal/carderror.pal
+loadAddr=0x500
+#minTiles=0x185
+maxTiles=0xE0
+#blacklist=360-363
+
+#******************************************************************************
+# Main layout
+#******************************************************************************
+
+[Tilemap00]
+source=rsrc/grp/title_bonus_0-0.png
+dest=out/maps/title_bonus_0-0.bin
+transparency=0
+

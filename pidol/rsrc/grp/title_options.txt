@@ -1,0 +1,37 @@
+set basepattern=318
+set patternoffset=-256
+set paletteoffset=-7
+
+#set xoffset=-136
+#set yoffset=-104
+set xorigin=88
+set yorigin=0
+
+#============
+# option 0
+#============
+
+add x=0x00  y=0x00  w=32 h=16 pri=0 pal=8
+add x=0x20  y=0x00  w=32 h=16 pri=0 pal=8
+
+outputSprites "out/grp/title_options_0_spr.bin"
+#outputPreviewGrp "test_preview.png"
+
+#============
+# option 1
+#============
+
+add x=0x00  y=0x20  w=32 h=16 pri=0 pal=8
+add x=0x20  y=0x20  w=32 h=16 pri=0 pal=8
+
+outputSprites "out/grp/title_options_1_spr.bin"
+
+#============
+# option 2
+#============
+
+add x=0x00  y=0x40  w=32 h=16 pri=0 pal=8
+add x=0x20  y=0x40  w=32 h=16 pri=0 pal=8
+add x=0x40  y=0x40  w=32 h=16 pri=0 pal=8
+
+outputSprites "out/grp/title_options_2_spr.bin"

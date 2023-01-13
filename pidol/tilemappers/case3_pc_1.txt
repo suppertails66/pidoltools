@@ -1,0 +1,33 @@
+#******************************************************************************
+# case3 pc 0 tilemap generator
+#******************************************************************************
+
+[Properties]
+palette=out/rsrc_raw/pal/case3_pc.pal
+#freepalettes=
+dest=out/grp/case3_pc_1.bin
+#paldest=out/rsrc_raw/pal/carderror.pal
+loadAddr=0x2A0
+#minTiles=0x185
+maxTiles=0x13B
+#blacklist=360-363
+
+#******************************************************************************
+# Main layout
+#******************************************************************************
+
+[Tilemap00]
+source=out/grp/case3_pc_1-0.png
+dest=out/maps/case3_pc_1-0.bin
+transparency=0
+
+[Tilemap01]
+source=out/grp/case3_pc_1-1.png
+dest=out/maps/case3_pc_1-1.bin
+transparency=0
+
+[Tilemap02]
+source=out/grp/case3_pc_1-2.png
+dest=out/maps/case3_pc_1-2.bin
+transparency=0
+
