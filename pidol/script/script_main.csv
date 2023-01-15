@@ -3761,7 +3761,7 @@ Hang on, you don't have a flashlight? Man, how'd you make it here?",,,
 string,adv-0xD46-0x15A_7,Sawada: {,},"おれ達の部屋にバッグがある\s<$1E>
 そ\s<$02>の中に予備の懐中電灯があるから
 持っていくといい。","There's a bag in our room.\n
-\s<$1E>I\s<$02>'s got spare flashlights in it, so you should take one.",,,
+\s<$1E>I\s<$02>t's got spare flashlights in it, so you should take one.",,,
 string,adv-0xD46-0x20F_1,,,"状況を聞く\n
 やめる","Ask about the situation\n
 Quit",,,
@@ -5678,7 +5678,7 @@ string,area-0x130E-0xDBAA_1,Motoko: {,},"案外、簡単な所に隠してある
 string,area-0x130E-0xDBD7_1,Kihara: {,},"‥どんな素人でも、棚の引出
 しに隠すと思う？",...What kind of amateur do you think would hide it in a shelf drawer?,,,
 string,area-0x130E-0xDC09_1,May: {,},"これ‥ヘビのエサを運ぶため
-のバケツ？",This is...a bucket for carrying snake food?,"NOTE: not used, i think?",,
+のバケツ？",This is...a bucket for carrying snake food?,NOTE: used if you examine the table in kihara's room,,
 string,area-0x130E-0xDC09_3,Motoko: {,},"やだぁ‥！\n
 血が付いてるじゃない‥‥‥。","Ick...!\n
 It's got blood on it...",,,
