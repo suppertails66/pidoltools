@@ -88,12 +88,21 @@
 ; load new menu graphics
 ;=====
 
-.define newMenuGrpSrcBank $B
-.define newMenuGrpSrcOffset $0
-.define newMenuGrpSrcPtr $A000+newMenuGrpSrcOffset
-.define newMenuGrpDstAddr $4800
+; NOTE: parts of banks A/B are used when accessing backup memory,
+; including memory base 128, so they shouldn't be used
+.define newMenuGrp1SrcBank $E
+.define newMenuGrp1SrcOffset $B00
+.define newMenuGrp1SrcPtr $A000+newMenuGrp1SrcOffset
+.define newMenuGrp1DstAddr $4800
 ; must be divisible by $100
-.define newMenuGrpSize $1700
+.define newMenuGrp1Size $1500
+
+.define newMenuGrp2SrcBank $F
+.define newMenuGrp2SrcOffset $1B00
+.define newMenuGrp2SrcPtr $A000+newMenuGrp2SrcOffset
+.define newMenuGrp2DstAddr $4800+(newMenuGrp1Size/2)
+; must be divisible by $100
+.define newMenuGrp2Size $100
 
 .bank 0 slot 0
 .orga $591B
@@ -105,30 +114,71 @@
 .section "new grp 2" free
   loadNewMenuGrp:
     ; src bank
-    lda #newMenuGrpSrcBank
+    lda #newMenuGrp1SrcBank
     clc 
     adc $6D.b
     tam #$20
     ina 
     tam #$40
     ; src
-    lda #<newMenuGrpSrcPtr
+    lda #<newMenuGrp1SrcPtr
     sta $20.b
-    lda #>newMenuGrpSrcPtr
+    lda #>newMenuGrp1SrcPtr
     sta $21.b
     lda #$00
     sta $F7.b
     sta $0000.w
     ; dst = vram $4000
-    lda #<newMenuGrpDstAddr
+    lda #<newMenuGrp1DstAddr
     sta $0002.w
-    lda #>newMenuGrpDstAddr
+    lda #>newMenuGrp1DstAddr
     sta $0003.w
     lda #$02
     sta $F7.b
     sta $0000.w
     ; size
-    ldx #((newMenuGrpSize+$FF)/$100)
+    ldx #((newMenuGrp1Size+$FF)/$100)
+    ; loop
+    --:
+      cly 
+      ; loop
+      -:
+        lda ($20.b),Y
+        sta $0002.w
+        iny 
+        lda ($20.b),Y
+        sta $0003.w
+        iny 
+        bne -
+      inc $21.b
+      dex 
+      bne --
+    
+    ; src bank
+    lda #newMenuGrp2SrcBank
+    clc 
+    adc $6D.b
+    tam #$20
+    ina 
+    tam #$40
+    ; src
+    lda #<newMenuGrp2SrcPtr
+    sta $20.b
+    lda #>newMenuGrp2SrcPtr
+    sta $21.b
+    lda #$00
+    sta $F7.b
+    sta $0000.w
+    ; dst = vram $4000
+    lda #<newMenuGrp2DstAddr
+    sta $0002.w
+    lda #>newMenuGrp2DstAddr
+    sta $0003.w
+    lda #$02
+    sta $F7.b
+    sta $0000.w
+    ; size
+    ldx #((newMenuGrp2Size+$FF)/$100)
     ; loop
     --:
       cly 

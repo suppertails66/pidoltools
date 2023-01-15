@@ -316,7 +316,12 @@ pidol_spriteprep_title "out/grp/title_options_1_spr.bin"
 pidol_spriteprep_title "out/grp/title_options_2_spr.bin"
 
 cat "out/grp/title_files_grp.bin" "out/grp/title_options_grp.bin" > "out/grp/title_files_grp_asm.bin"
-datpatch "out/base/title_36.bin" "out/base/title_36.bin" "out/grp/title_files_grp_asm.bin" 0x16000
+#datpatch "out/base/title_36.bin" "out/base/title_36.bin" "out/grp/title_files_grp_asm.bin" 0x16000
+#datpatch "out/base/title_36.bin" "out/base/title_36.bin" "out/grp/title_files_grp_asm.bin" 0x3E000
+#datpatch "out/base/title_36.bin" "out/base/title_36.bin" "out/grp/title_files_grp.bin" 0x1CB00
+#datpatch "out/base/title_36.bin" "out/base/title_36.bin" "out/grp/title_options_grp.bin" 0x2EE00
+datpatch "out/base/title_36.bin" "out/base/title_36.bin" "out/grp/title_files_grp_asm.bin" 0x1CB00 0x0 0x1500
+datpatch "out/base/title_36.bin" "out/base/title_36.bin" "out/grp/title_files_grp_asm.bin" 0x1FB00 0x1500 0x100
 
 datpatch "out/base/title_36.bin" "out/base/title_36.bin" "out/grp/title_bonus_0.bin" 0x8400
 datpatch "out/base/title_36.bin" "out/base/title_36.bin" "out/maps/title_bonus_0-0.bin" 0x1E000
