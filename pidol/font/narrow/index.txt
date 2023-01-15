@@ -4,6 +4,7 @@ charsPerRow=16
 gridW=16
 gridH=12
 autoKerningOffset=0
+noKerning=1
 
 # space
 [char0000]
@@ -107,7 +108,10 @@ noKerningIfSecond=1
 noKerningIfFirst=1
 noKerningIfSecond=1
 
-# fixed space
+# fixed spaces
+
+[char005C]
+advanceWidth=1
 
 [char005E]
 advanceWidth=8
