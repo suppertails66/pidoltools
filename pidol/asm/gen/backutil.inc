@@ -108,8 +108,7 @@
 .bank bank2 slot 3
 .section "backutil str backutil_0x513D" free
   backutil_0x513D:
-  .db $0A,$0F,$02,$37,$49,$51,$53,$56,$5D,$20,$2C,$45,$57,$49,$20,$22
-  .db $23,$29,$00
+  .db $0A,$0F,$02,$37,$2C,$22,$23,$29,$00
 .ends
 .bank bank2 slot 3
 .orga $D13D
@@ -139,8 +138,7 @@
 .bank bank2 slot 3
 .section "backutil str backutil_0x5174" free
   backutil_0x5174:
-  .db $0A,$0F,$03,$2C,$45,$48,$20,$47,$53,$52,$52,$49,$47,$58,$4D,$53
-  .db $52,$00
+  .db $0A,$0F,$03,$2C,$45,$48,$20,$47,$53,$52,$52,$49,$47,$5F,$00
 .ends
 .bank bank2 slot 3
 .orga $D174
@@ -150,8 +148,7 @@
 .bank bank2 slot 3
 .section "backutil str backutil_0x5180" free
   backutil_0x5180:
-  .db $0A,$0F,$03,$33,$52,$57,$59,$4A,$4A,$4D,$47,$4D,$49,$52,$58,$20
-  .db $57,$54,$45,$47,$49,$00
+  .db $0A,$0F,$03,$38,$53,$20,$57,$54,$45,$47,$49,$00
 .ends
 .bank bank2 slot 3
 .orga $D180
@@ -427,8 +424,8 @@
 .bank bank2 slot 3
 .section "backutil str backutil_0x542C" free
   backutil_0x542C:
-  .db $0A,$0C,$0B,$7D,$7D,$7D,$20,$41,$2B,$3C,$38,$33,$38,$31,$20,$7D
-  .db $7D,$7D,$00
+  .db $0A,$0C,$0B,$20,$20,$7C,$7C,$7D,$7D,$7D,$20,$41,$2B,$3C,$38,$33
+  .db $38,$31,$20,$7D,$7D,$7D,$00
 .ends
 .bank bank2 slot 3
 .orga $D42C
@@ -449,8 +446,8 @@
 .bank bank2 slot 3
 .section "backutil str backutil_0x545E" free
   backutil_0x545E:
-  .db $0A,$0F,$08,$72,$20,$3D,$45,$5A,$49,$20,$54,$53,$57,$57,$4D,$46
-  .db $50,$49,$20,$4D,$52,$20,$24,$20,$57,$50,$53,$58,$57,$5F,$00
+  .db $0A,$0F,$08,$72,$20,$2D,$45,$52,$20,$57,$45,$5A,$49,$20,$4D,$52
+  .db $20,$24,$20,$57,$50,$53,$58,$57,$5F,$00
 .ends
 .bank bank2 slot 3
 .orga $D45E
@@ -460,8 +457,8 @@
 .bank bank2 slot 3
 .section "backutil str backutil_0x547C" free
   backutil_0x547C:
-  .db $0A,$0F,$08,$72,$20,$3D,$45,$5A,$49,$20,$54,$53,$57,$57,$4D,$46
-  .db $50,$49,$20,$4D,$52,$20,$23,$20,$57,$50,$53,$58,$57,$5F,$00
+  .db $0A,$0F,$08,$72,$20,$2D,$45,$52,$20,$57,$45,$5A,$49,$20,$4D,$52
+  .db $20,$23,$20,$57,$50,$53,$58,$57,$5F,$00
 .ends
 .bank bank2 slot 3
 .orga $D47C
@@ -471,8 +468,8 @@
 .bank bank2 slot 3
 .section "backutil str backutil_0x549A" free
   backutil_0x549A:
-  .db $0A,$0F,$08,$72,$20,$3D,$45,$5A,$49,$20,$54,$53,$57,$57,$4D,$46
-  .db $50,$49,$20,$4D,$52,$20,$22,$20,$57,$50,$53,$58,$5F,$00
+  .db $0A,$0F,$08,$72,$20,$2D,$45,$52,$20,$57,$45,$5A,$49,$20,$4D,$52
+  .db $20,$22,$20,$57,$50,$53,$58,$5F,$00
 .ends
 .bank bank2 slot 3
 .orga $D49A
@@ -505,8 +502,7 @@
 .bank bank2 slot 3
 .section "backutil str backutil_0x5516" free
   backutil_0x5516:
-  .db $0A,$0F,$08,$3D,$45,$5A,$49,$20,$54,$53,$57,$57,$4D,$46,$50,$49
-  .db $5F,$00
+  .db $0A,$0F,$08,$2D,$45,$52,$20,$57,$45,$5A,$49,$5F,$00
 .ends
 .bank bank2 slot 3
 .orga $D516
@@ -548,7 +544,7 @@
 .bank bank2 slot 3
 .section "backutil str backutil_0x557F" free
   backutil_0x557F:
-  .db $41,$4C,$4D,$58,$49,$20,$3D,$47,$56,$4D,$54,$58,$00
+  .db $41,$4C,$4D,$58,$49,$20,$3D,$47,$56,$4D,$54,$58,$7C,$7C,$00
 .ends
 .bank bank2 slot 3
 .orga $D57F
@@ -558,7 +554,7 @@
 .bank bank2 slot 3
 .section "backutil str backutil_0x558A" free
   backutil_0x558A:
-  .db $3C,$49,$48,$20,$3D,$47,$56,$4D,$54,$58,$00
+  .db $3C,$49,$48,$20,$3D,$47,$56,$4D,$54,$58,$20,$20,$7C,$00
 .ends
 .bank bank2 slot 3
 .orga $D58A
@@ -568,7 +564,7 @@
 .bank bank2 slot 3
 .section "backutil str backutil_0x5595" free
   backutil_0x5595:
-  .db $2C,$50,$59,$49,$20,$3D,$47,$56,$4D,$54,$58,$00
+  .db $2C,$50,$59,$49,$20,$3D,$47,$56,$4D,$54,$58,$20,$7C,$7C,$00
 .ends
 .bank bank2 slot 3
 .orga $D595
@@ -578,7 +574,7 @@
 .bank bank2 slot 3
 .section "backutil str backutil_0x55A0" free
   backutil_0x55A0:
-  .db $31,$56,$49,$49,$52,$20,$3D,$47,$56,$4D,$54,$58,$00
+  .db $31,$56,$49,$49,$52,$7C,$7C,$3D,$47,$56,$4D,$54,$58,$7C,$00
 .ends
 .bank bank2 slot 3
 .orga $D5A0
@@ -588,7 +584,7 @@
 .bank bank2 slot 3
 .section "backutil str backutil_0x55AB" free
   backutil_0x55AB:
-  .db $2C,$50,$45,$47,$4F,$20,$3D,$47,$56,$4D,$54,$58,$00
+  .db $2C,$50,$45,$47,$4F,$20,$3D,$47,$56,$4D,$54,$58,$7C,$00
 .ends
 .bank bank2 slot 3
 .orga $D5AB
@@ -598,7 +594,7 @@
 .bank bank2 slot 3
 .section "backutil str backutil_0x55B6" free
   backutil_0x55B6:
-  .db $38,$53,$20,$48,$45,$58,$45,$00
+  .db $38,$53,$20,$48,$45,$58,$45,$20,$20,$20,$20,$20,$7C,$00
 .ends
 .bank bank2 slot 3
 .orga $D5B6
